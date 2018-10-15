@@ -1,9 +1,9 @@
-# Task Process Manager
+# Task Process Manager / ProcessOnitor / ProcesSanager
 
 ### Objective
 - To implement the classic task manager application.  It must contain the following components: metrics collection, database storage, and a user interface.
 
-### Project Working Demo (all demo files location: [link]())
+### Project Working Demo (all demo files location: [link](https://github.com/vivekVells/TaskProcessManager/tree/master/demo-review))
 - [Video Link](to be updated)
 - [Working Demo - PDF sheet](to be updated)
 
@@ -50,6 +50,6 @@
 Beware of the lots of scrolling to come :P
 
 ## Version 1
-System Related Information![]()
-CPU Related Information![]()
+System Related Information![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/System%20Info.PNG)
+CPU Related Information![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/CPU%20info.PNG)
 
