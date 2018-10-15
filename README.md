@@ -9,7 +9,7 @@
 
 
 ### Tech Usage Info 
-- Version 1: Java, Sigar, SQLite, Spring, Maven, GitHub
+- Version 1: Java, Sigar, SQLite, Spring, D3.js, Maven, GitHub
 
 ### Features
 - View System Level info (aimed as of now)
@@ -18,6 +18,7 @@
   - Process level statistics: process arguments, memory consumption, cpu consumption, credential info, state, environment, open file descriptors
   - File system level statistics: local and remote mounted file systems (NTFS, ext, SMB, NFS, etc), capacity, utilization
   - Network interface level statistics: all available network interfaces detected and monitored for bytes received/transmitted, packets received/transmitted, collisions, errors, dropped packets 
+- Monitor the processes in an intuitive way (Charts, Graphs)
 
 ### Future Enhancements
 - Note: The version will be updated whenever necessary to include more enhancements (will update these later) 
@@ -25,7 +26,7 @@
 ### Note
 - Using SIGAR for educational purpose only. (disclaimer made to avoid licensing issues with SIGAR)
 
-### Instructions to run this code in your machine: (will be updated soon)
+### Instructions to run this code in your machine:
 - IDE: Eclipse | OS: Windows
 - Eclipse IDE used for this project being downloaded eclipse from here - Eclipse IDE for Java EE Developers - 64 bit zip link: https://spring.io/tools3/eclipse
 - setup the java  https://www.mkyong.com/java/how-to-set-java_home-on-windows-10/ and maven https://www.mkyong.com/maven/how-to-install-maven-in-windows/ dependencies in your system 
