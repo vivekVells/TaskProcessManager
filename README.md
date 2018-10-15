@@ -49,9 +49,7 @@
 ### Application Screenshots So Far(wanna avoid scrolling a lot, use above pdf sheet)
 Beware of the lots of scrolling to come :P
 
-## Prototype
-![]()
-
 ## Version 1
-![]()
+System Related Information![]()
+CPU Related Information![]()
 
