@@ -25,26 +25,10 @@
 ### Note
 - Using SIGAR for educational purpose only. (disclaimer made to avoid licensing issues with SIGAR)
 
-### Instructions to run this code in your machine:
-#### In Eclipse or such IDE
-- This is very simple, just open the file project pointing to this code repo's src folder
-#### In console (Tested in Windows using GitBash cmd)
-- Make sure JAVA setup is available in your machine (coded when java was on version 1.8.0_144)
-- Open console command prompt or gitbash (I love git bash. Try this one)
-- Pull this code to your machine and run it (Install git and use git bash for the followings)
-  - Create a folder and do 
-    - **git init**
-  - Add this repo as your remote origin 
-    - **git remote add origin https://github.com/vivekVells/MSCS721-roomScheduler.git**
-  - Pull the code in this repo to your remote origin 
-    - **git pull origin master**   
-  - Type the followings (running the program in a particular path matters)
-    - if you are in the created folder then, run like the following
-        - Vivek-Pc@kev MINGW64 /e/Marist/Semester2/SoftwareVerificationAndMaintenance/RoomScheduler (master)
-        - $ **java -jar src/resources/files/roomExportedFiles/exportedRoomScheduler.jar** 
-    - Or move into all the way to roomExportedFiles folder and then try like the following
-        - Vivek-Pc@kev MINGW64 /e/Marist/Semester2/SoftwareVerificationAndMaintenance/RoomScheduler/src/resources/files/roomExportedFiles (master)
-        - $ **java -jar exportedRoomScheduler.jar**
+### Instructions to run this code in your machine: (will be updated soon)
+#### In Eclipse 
+- downloaded eclipse from here - Eclipse IDE for Java EE Developers - 64 bit zip link: https://spring.io/tools3/eclipse
+
         
 ### Application Screenshots So Far(wanna avoid scrolling a lot, use above pdf sheet)
 Beware of the lots of scrolling to come :P
