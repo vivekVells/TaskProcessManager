@@ -33,7 +33,8 @@
 - clone this repo
     - git clone https://github.com/vivekVells/TaskProcessManager.git 
 - open eclipse and open the proejct located in this location: .\TaskProcessManager\version1\maven_use\eclipse_processmonitor_ver1
-- Optional: add the **sigar.jar** file to the project "processmonitorver1" by going to its properties (right click on project -> **Properties** -> **Java Build Path** on left pane -> **Libraries** tab on right pane -> **Add External JARs** button and add the sigar.jar file in this location .\TaskProcessManager\prototype\hyperic-sigar-1.6.4\sigar-bin\lib\sigar.jar
+- add the **sigar.jar** file to the project "processmonitorver1" by going to its properties (right click on project -> **Properties** -> **Java Build Path** on left pane -> **Libraries** tab on right pane -> **Add External JARs** button and add the sigar.jar file in this location .\TaskProcessManager\prototype\hyperic-sigar-1.6.4\sigar-bin\lib\sigar.jar
+- optional: if eclipse shouts error stating "Project is missing required library: <location of jar>", then remove that one by - navigating to project properties of "processmonitorver1" by going to its properties - right click on project -> **Properties** -> **Java Build Path** on left pane -> **Libraries** tab on right pane -> **remove any unused or errored jar file**
 - check whether you can run any java files like Version.java or CpuInfo.java file - if its working, thats cool! if not, mail to "mailkev3@gmail.com" 
 
 ### Application Screenshots So Far(wanna avoid scrolling a lot, use above pdf sheet)
