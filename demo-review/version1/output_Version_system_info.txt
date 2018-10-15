@@ -1,0 +1,24 @@
+Sigar version.......java=1.6.4.129, native=1.6.4.128
+Build date..........java=04/28/2010 04:26 PM, native=04/28/2010 04:26 PM
+SCM rev.............java=4b67f57, native=4b67f57
+Archlib.............sigar-amd64-winnt.dll
+Current fqdn........192.168.56.1
+Hostname............kev
+Language............1033:English (United States)
+Perflib lang id.....009
+Current user........Vivek-Pc
+
+OS description......Microsoft 
+OS name.............Win32
+OS arch.............x64
+OS machine..........
+OS version..........10.0
+OS patch level......
+OS vendor...........Microsoft
+OS vendor version...¨0
+OS code name........
+OS data model.......64
+OS cpu endian.......little
+Java vm version.....25.161-b12
+Java vm vendor......Oracle Corporation
+Java home...........C:\Program Files\Java\jre1.8.0_161
