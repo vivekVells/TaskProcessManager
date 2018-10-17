@@ -91,3 +91,59 @@ public class CpuInfo extends SigarCommandBase{
     }
 
 }
+
+/*
+Output:
+Vendor.........Intel
+Model..........Core(TM) i5-4210U CPU @ 1.70GHz
+Mhz............2394
+Total CPUs.....4
+Physical CPUs..4
+Cores per CPU..16
+
+CPU 0.........
+User Time.....0.0%
+Sys Time......6.0%
+Idle Time.....93.9%
+Wait Time.....0.0%
+Nice Time.....0.0%
+Combined......6.0%
+Irq Time......0.0%
+
+CPU 1.........
+User Time.....3.1%
+Sys Time......0.0%
+Idle Time.....96.8%
+Wait Time.....0.0%
+Nice Time.....0.0%
+Combined......3.1%
+Irq Time......0.0%
+
+CPU 2.........
+User Time.....0.0%
+Sys Time......6.0%
+Idle Time.....93.9%
+Wait Time.....0.0%
+Nice Time.....0.0%
+Combined......6.0%
+Irq Time......0.0%
+
+CPU 3.........
+User Time.....0.0%
+Sys Time......0.0%
+Idle Time.....100.0%
+Wait Time.....0.0%
+Nice Time.....0.0%
+Combined......0.0%
+Irq Time......0.0%
+
+Totals........
+User Time.....4.6%
+Sys Time......2.3%
+Idle Time.....92.1%
+Wait Time.....0.0%
+Nice Time.....0.0%
+Combined......7.0%
+Irq Time......0.7%
+
+*/
