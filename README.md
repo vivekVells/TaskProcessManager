@@ -27,6 +27,10 @@
 - Using SIGAR for educational purpose only. (disclaimer made to avoid licensing issues with SIGAR)
 
 ### Instructions to run this code in your machine:
+## To run the Web App
+- to be updated
+
+## To run & retrieve low level system info
 - IDE: Eclipse | OS: Windows
 - Eclipse IDE used for this project being downloaded eclipse from here - Eclipse IDE for Java EE Developers - 64 bit zip link: https://spring.io/tools3/eclipse
 - setup the java  https://www.mkyong.com/java/how-to-set-java_home-on-windows-10/ and maven https://www.mkyong.com/maven/how-to-install-maven-in-windows/ dependencies in your system 
@@ -40,7 +44,9 @@
 ### Application Screenshots So Far(wanna avoid scrolling a lot, use above pdf sheet)
 Beware of the lots of scrolling to come :P
 
-## Version 1
+## Version 1 - Web UI 
+Initial Setup![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/1st%20verison%20output%20-%20localhost_8080%20-%20Google%20Chrome%2010_24_2018%2011_47_10%20PM.png)
+## Version 1 - Verifying the system level info 
 System Related Information![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/System%20Info.PNG)
 CPU Related Information![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/CPU%20info.PNG)
 
