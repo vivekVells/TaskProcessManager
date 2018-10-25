@@ -1,2 +1,0 @@
-- downloaded eclipse from here - Eclipse IDE for Java EE Developers - 64 bit zip
-https://spring.io/tools3/eclipse
