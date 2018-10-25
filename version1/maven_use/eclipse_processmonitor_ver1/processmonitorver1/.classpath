@@ -24,5 +24,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="E:/kevDev/ProjectWorks/TaskProcessManager/prototype/hyperic-sigar-1.6.4/sigar-bin/lib/sigar.jar"/>
+	<classpathentry kind="lib" path="E:/kevDev/ProjectWorks/TaskProcessManager/prototype/hyperic-sigar-1.6.4/sigar-bin/lib/log4j.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
