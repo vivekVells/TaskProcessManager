@@ -26,12 +26,13 @@
 - Using SIGAR for educational purpose only. (disclaimer made to avoid licensing issues with SIGAR)
 
 ### Instructions to run this project in your machine:
-- Used: IDE: Eclipse | OS: Windows
-  - for Linux OS, executing the project is also follows similar steps
+- Used: IDE: Eclipse | OS: Windows, Linux
 
 ## To run the Web App
-- setup java & maven env in your local machine. (reference: https://www.mkyong.com/maven/how-to-install-maven-in-windows/)
-- download project (link: ) -> unzip it
+- setup java & maven env in your local machine. 
+  - Windows: https://www.mkyong.com/maven/how-to-install-maven-in-windows/
+  - Linux: for maven - https://www.youtube.com/watch?v=i8hSPwXZ0UI
+- download project [Refer the release branch with tag v1.0](https://github.com/vivekVells/TaskProcessManager/releases/tag/v1.0)
 - run following command
   - ```mvn clean install```
   	- proceed only after you receive "BUILD SUCCESS" confirmation
