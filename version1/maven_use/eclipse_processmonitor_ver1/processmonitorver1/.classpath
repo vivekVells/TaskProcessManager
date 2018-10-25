@@ -23,6 +23,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="E:/kevDev/ProjectWorks/TaskProcessManager/prototype/hyperic-sigar-1.6.4/sigar-bin/lib/sigar.jar"/>
+	<classpathentry kind="lib" path="D:/TaskProcessManager/prototype/hyperic-sigar-1.6.4/sigar-bin/lib/sigar.jar"/>
+	<classpathentry kind="lib" path="D:/TaskProcessManager/resource_refer/jar/sqlite-jdbc-3.23.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
