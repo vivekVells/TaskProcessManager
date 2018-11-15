@@ -1,4 +1,4 @@
-package trioxes.processmonitorver1;
+package kev.processmonitorver1;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
