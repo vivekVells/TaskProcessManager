@@ -49,15 +49,15 @@ public class VersionInfoTest {
 	    expectedSigarVersionInfoMap = new HashMap<String, Object>();
 	    
 	    String[] osVersionInfoKeyTestArg = {
-	    		"os description", "os name", "os arch", "os machine", "os version",
-	    		"os patch level", "os verndor version", "os vendor code name", 
-	    		"os cpu endian"
+	    		"os description", "os name", "os vendor version", "os arch", 
+	    		"os vendor code name", "os machine", "os patch level", 
+	    		"os data model", "os version", "os cpu endian"
 	    };
 	    
 	    Object[] osVersionInfoValueTestArg = {
-	    		"[Microsoft \f", "Win32", "¨0k", "x64", "unknown", 
-	    		"unknown", "unknown", "64", "10.0", 
-	    		"little"    		
+	    		"Microsoft \f", "Win32", "¨0k", "x64", 
+	    		"unknown", "unknown", "unknown", 
+	    		"64", "10.0", "little"    		
 	    };
 	    
 	    for(int index = 0; index < osVersionInfoKeyTestArg.length; index++) {
@@ -165,17 +165,97 @@ public class VersionInfoTest {
 	/**
 	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfo()}.
 	 */
-	@Ignore
+	@Test
 	public void testGetOsVersionInfo() {
-		fail("Not yet implemented");
+		assertEquals(expectedOsVersionInfoMap, this.verInfoObj.getOsVersionInfo());
 	}
 
 	/**
 	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
 	 */
-	@Ignore
+	@Test
+	public void testGetOsVersionInfoByDescription() {
+		assertEquals(expectedOsVersionInfoMap.get("os description"), this.verInfoObj.getOsVersionInfoBy("os description"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByName() {
+		assertEquals(expectedOsVersionInfoMap.get("os name"), this.verInfoObj.getOsVersionInfoBy("os name"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByArch() {
+		assertEquals(expectedOsVersionInfoMap.get("os arch"), this.verInfoObj.getOsVersionInfoBy("os arch"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByMachine() {
+		assertEquals(expectedOsVersionInfoMap.get("os machine"), this.verInfoObj.getOsVersionInfoBy("os machine"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByVersion() {
+		assertEquals(expectedOsVersionInfoMap.get("os version"), this.verInfoObj.getOsVersionInfoBy("os version"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByPatchLevel() {
+		assertEquals(expectedOsVersionInfoMap.get("os patch level"), this.verInfoObj.getOsVersionInfoBy("os patch level"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByVendorVersion() {
+		assertEquals(expectedOsVersionInfoMap.get("os vendor version"), this.verInfoObj.getOsVersionInfoBy("os vendor version"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByVendorCodeName() {
+		assertEquals(expectedOsVersionInfoMap.get("os vendor code name"), this.verInfoObj.getOsVersionInfoBy("os vendor code name"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByDataModel() {
+		assertEquals(expectedOsVersionInfoMap.get("os data model"), this.verInfoObj.getOsVersionInfoBy("os data model"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
+	public void testGetOsVersionInfoByCpuEndian() {
+		assertEquals(expectedOsVersionInfoMap.get("os cpu endian"), this.verInfoObj.getOsVersionInfoBy("os cpu endian"));
+	}
+	
+	/**
+	 * Test method for {@link kev.version.info.VersionInfo#getOsVersionInfoBy()}.
+	 */
+	@Test
 	public void testGetOsVersionInfoBy() {
-		fail("Not yet implemented");
+		assertEquals(expectedOsVersionInfoMap.get("os version"), this.verInfoObj.getOsVersionInfoBy("os version"));
 	}
 	
 	/**
