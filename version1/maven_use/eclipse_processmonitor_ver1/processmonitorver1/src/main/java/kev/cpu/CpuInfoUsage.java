@@ -146,11 +146,10 @@ public class CpuInfoUsage extends SigarCommandBase{
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        CpuInfoUsage cpuObj = new CpuInfoUsage();
-        
-        System.out.println("CPU info on machine: " + cpuObj.getCpuMachineInfo().values());
-        System.out.println("Total CPU usage: " + cpuObj.getTotalCpuUsageInfo().values());
-        System.out.println("individual cpu usage info: " + cpuObj.getIndividualCpuUsageInfo().values());        
+//        CpuInfoUsage cpuObj = new CpuInfoUsage();        
+//        System.out.println("CPU info on machine: " + cpuObj.getCpuMachineInfo().values());
+//        System.out.println("Total CPU usage: " + cpuObj.getTotalCpuUsageInfo().values());
+//        System.out.println("individual cpu usage info: " + cpuObj.getIndividualCpuUsageInfo().values());        
     }
 
 	@Override
@@ -166,9 +165,7 @@ public class CpuInfoUsage extends SigarCommandBase{
      since unsynchronized, delay intentionally used to avoid the race conditions 
    BigDecimal
      used for handling precise values; seems double or float have some issues when used for handling precise values
- */
 
-/**
 Program Output:
 CPU info on machine: [Intel, 4, 16, Core(TM) i5-4210U CPU @ 1.70GHz, 2394, 4]
 Total CPU usage: [99.2, 0.0, 0.8, 0.8, 0.0, 0.0, 0.0]

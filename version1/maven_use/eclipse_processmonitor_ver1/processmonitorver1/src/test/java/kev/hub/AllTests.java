@@ -4,11 +4,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import kev.cpu.CpuInfoUsage;
+import kev.cpu.CpuInfoUsageTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	CpuInfoUsage.class,
+	CpuInfoUsageTest.class,
 })
 
 public class AllTests {

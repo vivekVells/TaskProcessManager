@@ -1,5 +1,5 @@
 /**
- * 
+ * This class is exclusive for all possible test cases for CpuInfoUsage class
  */
 package kev.cpu;
 
@@ -15,6 +15,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import org.hyperic.sigar.Sigar;
 import kev.cpu.CpuInfoUsage;
 
 /**
@@ -23,6 +24,8 @@ import kev.cpu.CpuInfoUsage;
  */
 public class CpuInfoUsageTest {
 	CpuInfoUsage cpuObj;
+	Sigar sigar;
+
 	static HashMap<String, Object> cpuMachineInfoMapForTest = new HashMap<String, Object>();
 	
 	/**
@@ -30,24 +33,18 @@ public class CpuInfoUsageTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		Object[] cpuMachineInfoArrayForTest = { "Intel", "Core(TM) i5-7500 CPU @ 3.40GHz", 3408, 4, 4, 16 };
+		// marist library machine
+		// Object[] cpuMachineInfoArrayForTest = { "Intel", "Core(TM) i5-7500 CPU @ 3.40GHz", 3408, 4, 4, 16 };
+		
+		// vivek machine
+		Object[] cpuMachineInfoArrayForTest = { "Intel", "Core(TM) i5-4210U CPU @ 1.70GHz", 2394, 4, 4, 16 };		
 		
 		cpuMachineInfoMapForTest.put("vendor", cpuMachineInfoArrayForTest[0]);
 		cpuMachineInfoMapForTest.put("model", cpuMachineInfoArrayForTest[1]);
 		cpuMachineInfoMapForTest.put("operating at", cpuMachineInfoArrayForTest[2]);
 		cpuMachineInfoMapForTest.put("total cores", cpuMachineInfoArrayForTest[3]);
 		cpuMachineInfoMapForTest.put("total sockets", cpuMachineInfoArrayForTest[4]);
-		cpuMachineInfoMapForTest.put("cores per socket", cpuMachineInfoArrayForTest[5]);
-	}
-	
-	/**
-	 * To get cpuMachineInoArrayForTest object array values
-	 * 
-	 * @param arg
-	 * @return mapped value avail in cpuMachineInoMapForTest Hashmap
-	 */
-	public static Object getCpuMachineInfoMapValues(String arg) {
-		return cpuMachineInfoMapForTest.get(arg);
+		cpuMachineInfoMapForTest.put("cores per socket", cpuMachineInfoArrayForTest[5]);	
 	}
 
 	/**
@@ -55,6 +52,7 @@ public class CpuInfoUsageTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		cpuMachineInfoMapForTest = new HashMap<String, Object>();
 	}
 
 	/**
@@ -63,6 +61,7 @@ public class CpuInfoUsageTest {
 	@Before
 	public void setUp() throws Exception {
 		this.cpuObj = new CpuInfoUsage();
+		this.sigar = new Sigar();
 	}
 
 	/**
@@ -70,7 +69,19 @@ public class CpuInfoUsageTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		this.cpuObj = null;
+		this.sigar = null;
 	}
+
+	/**
+	 * To get cpuMachineInoArrayForTest object array values
+	 * 
+	 * @param arg
+	 * @return mapped value avail in cpuMachineInoMapForTest Hashmap
+	 */
+	public static Object getCpuMachineInfoMapValues(String arg) {
+		return cpuMachineInfoMapForTest.get(arg);
+	}	
 
 	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#getFormattedDecimal(java.lang.Double)}.
@@ -85,26 +96,41 @@ public class CpuInfoUsageTest {
 
 	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#retrieveCpuPerc(org.hyperic.sigar.CpuPerc)}.
+	 * @throws SigarException 
+	 * @throws InterruptedException 
 	 */
 	@Ignore
-	public void testRetrieveCpuPerc() {
-		fail("Not yet implemented"); // TODO
+	public void testRetrieveCpuPerc() throws InterruptedException, SigarException { 		
+		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigar.getCpuPerc());
+		// HashMap<String, Object> expectedRectrieveCpuPerc;
+		
+		assertEquals(actualRectrieveCpuPerc.size(), 7);	
 	}
 
 	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#getIndividualCpuUsageInfo()}.
+	 * @throws SigarException 
+	 * @throws InterruptedException 
 	 */
 	@Ignore
-	public void testGetIndividualCpuUsageInfo() {
-		fail("Not yet implemented"); // TODO
+	public void testGetIndividualCpuUsageInfo() throws InterruptedException, SigarException {
+		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigar.getCpuPerc());
+		// HashMap<String, Object> expectedRectrieveCpuPerc;
+		
+		assertEquals(actualRectrieveCpuPerc.size(), 7);	
 	}
 
 	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#getTotalCpuUsageInfo()}.
+	 * @throws SigarException 
+	 * @throws InterruptedException 
 	 */
 	@Ignore
-	public void testGetTotalCpuUsageInfo() {
-		fail("Not yet implemented"); // TODO
+	public void testGetTotalCpuUsageInfo() throws InterruptedException, SigarException {
+		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigar.getCpuPerc());
+		// HashMap<String, Object> expectedRectrieveCpuPerc;
+		
+		assertEquals(actualRectrieveCpuPerc.size(), 7);	
 	}
 
 	/**
@@ -202,13 +228,4 @@ public class CpuInfoUsageTest {
 		
 		assertEquals(expectedGetCpuMachineInfoBy, actualGetCpuMachineInfoBy);
 	}	
-
-	/**
-	 * Test method for {@link kev.cpu.CpuInfoUsage#main(java.lang.String[])}.
-	 */
-	@Ignore
-	public void testMain() {
-		fail("Not yet implemented"); // TODO
-	}
-
 }
