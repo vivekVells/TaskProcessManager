@@ -10,7 +10,8 @@ import org.hyperic.sigar.Sigar;
 
 /**
  * @author Vivek
- *
+ * 
+ * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
  */
 public class UtilityPack {
 	
@@ -38,7 +39,19 @@ public class UtilityPack {
         return Double.valueOf(bd.doubleValue());
     }    
 
-	/**
+    /**
+     * Value if not present should return unkown string
+     * 
+     * @param checkArg
+     * @return "unknown" if arg not having value
+     */
+    public static String getUnkownIfValueNotPresent(String checkArg) {
+    	String result = (checkArg.length() > 0) ? checkArg : "unknown";
+
+    	return result;
+    }
+    
+    /**
 	 * @param args
 	 */
 	public static void main(String[] args) { }

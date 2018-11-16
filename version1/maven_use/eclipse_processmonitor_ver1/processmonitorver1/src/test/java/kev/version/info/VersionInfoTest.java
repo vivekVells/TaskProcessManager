@@ -132,14 +132,6 @@ public class VersionInfoTest {
 	public void tearDown() throws Exception {
 		this.verInfoObj = null;
 		this.sigarObj.close();
-	}
-
-	/**
-	 * Test method for {@link kev.version.info.VersionInfo#getUnkownIfValueNotPresent()}.
-	 */
-	@Test
-	public void testGetUnkownIfValueNotPresent() {
-		assertNotEquals("unknown", "value present");
 	}	
 	
 	/**

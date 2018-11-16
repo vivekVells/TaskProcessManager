@@ -9,13 +9,13 @@ import java.util.HashMap;
 import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.SigarLoader;
 import org.hyperic.sigar.SigarException;
-import kev.utility.UtilityPack;
 
 /**
  * @author Vivek
  * 
  * CpuInfo class will pull all cpu related info from system
- *
+ * 
+ * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
  */
 public class CpuInfoUsage extends SigarCommandBase{
     
@@ -26,6 +26,9 @@ public class CpuInfoUsage extends SigarCommandBase{
     public CpuInfoUsage() {
         super();
     }
+    
+	@Override
+	public void output(String[] arg0) throws SigarException {}
     
     /**
      * Get CpuInfoUsage class object
@@ -46,21 +49,43 @@ public class CpuInfoUsage extends SigarCommandBase{
     public HashMap<String, Object> retrieveCpuPerc(CpuPerc cpu) throws InterruptedException {
     	HashMap<String, Object> retrieveCpuPercMap = new HashMap<String, Object>();
 
-        retrieveCpuPercMap.put("user time", UtilityPack.getFormattedDecimal((cpu.getUser()*100), 1)); 
-        retrieveCpuPercMap.put("sys time", UtilityPack.getFormattedDecimal((cpu.getSys()*100), 1));
-        retrieveCpuPercMap.put("idle time", UtilityPack.getFormattedDecimal((cpu.getIdle()*100), 1));
-        retrieveCpuPercMap.put("wait time", UtilityPack.getFormattedDecimal((cpu.getWait()*100), 1));
-        retrieveCpuPercMap.put("nice time", UtilityPack.getFormattedDecimal((cpu.getNice()*100), 1));
-        retrieveCpuPercMap.put("combined", UtilityPack.getFormattedDecimal((cpu.getCombined()*100), 1));
-        retrieveCpuPercMap.put("irq time", UtilityPack.getFormattedDecimal((cpu.getIrq()*100), 1));
+        retrieveCpuPercMap.put("user time", (Integer)(int)Math.round(cpu.getUser() * 100)); 
+        retrieveCpuPercMap.put("sys time", (Integer)(int)Math.round(cpu.getSys() * 100));
+        retrieveCpuPercMap.put("idle time", (Integer)(int)Math.round(cpu.getIdle() * 100));
+        retrieveCpuPercMap.put("wait time", (Integer)(int)Math.round(cpu.getWait() * 100));
+        retrieveCpuPercMap.put("nice time", (Integer)(int)Math.round(cpu.getNice() * 100));
+        retrieveCpuPercMap.put("combined", (Integer)(int)Math.round(cpu.getCombined() * 100));
+        retrieveCpuPercMap.put("irq time", (Integer)(int)Math.round(cpu.getIrq() * 100));
         
         if (SigarLoader.IS_LINUX) {
-            retrieveCpuPercMap.put("soft irq time", CpuPerc.format(cpu.getSoftIrq()));
-            retrieveCpuPercMap.put("stolen time", CpuPerc.format(cpu.getStolen()));
+            retrieveCpuPercMap.put("soft irq time", (Integer)(int)Math.round(cpu.getSoftIrq() * 100));
+            retrieveCpuPercMap.put("stolen time", (Integer)(int)Math.round(cpu.getStolen() * 100));
         }
          
         return retrieveCpuPercMap;
     }
+    
+    /**
+     * To get list object of all available CPUs percentage usage
+     * 
+     * @return list object of all available CPUs percentage usage
+     * @throws SigarException
+     */
+    public CpuPerc[] getCpuPercUsageListObject() throws SigarException {
+    	CpuPerc[] cpus = this.sigar.getCpuPercList();
+    	
+    	return cpus;
+    }
+    
+    /**
+     * To get total cpu percentage usage obj
+     * 
+     * @return object of total cpu percentage usage
+     * @throws SigarException
+     */
+    public CpuPerc getCpuPercTotalUsageObject() throws SigarException {
+    	return this.sigar.getCpuPerc();
+    }    
     
     /**
      * Individual CPU core usage
@@ -70,7 +95,7 @@ public class CpuInfoUsage extends SigarCommandBase{
      * @throws InterruptedException
      */
     public HashMap<Integer, HashMap<String, Object>> getIndividualCpuUsageInfo() throws SigarException, InterruptedException {
-        CpuPerc[] cpus = this.sigar.getCpuPercList();
+        CpuPerc[] cpus = getCpuPercUsageListObject();
         HashMap<Integer, HashMap<String, Object>> individualCpuUsageInfoMap 
           = new HashMap<Integer, HashMap<String, Object>>();
         
@@ -90,7 +115,7 @@ public class CpuInfoUsage extends SigarCommandBase{
      * @throws InterruptedException
      */
     public HashMap<String, Object> getTotalCpuUsageInfo() throws SigarException, InterruptedException {
-        return retrieveCpuPerc(this.sigar.getCpuPerc());    	
+        return retrieveCpuPerc(getCpuPercTotalUsageObject());    	
     }
     
     /**
@@ -136,29 +161,5 @@ public class CpuInfoUsage extends SigarCommandBase{
      * @param args
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
-//        CpuInfoUsage cpuObj = new CpuInfoUsage();        
-//        System.out.println("CPU info on machine: " + cpuObj.getCpuMachineInfo().values());
-//        System.out.println("Total CPU usage: " + cpuObj.getTotalCpuUsageInfo().values());
-//        System.out.println("individual cpu usage info: " + cpuObj.getIndividualCpuUsageInfo().values());        
-    }
-
-	@Override
-	public void output(String[] arg0) throws SigarException {}
+    public static void main(String[] args) throws Exception { }
 }
-
-/**
- Notes:
-   HashMap 
-     helps to store & retrieve different data types
-     retrieveValueBy("<key>") helps to retrieve any value of the desired key which is very easier
-     easy to retrive desired entry and store in the db
-     since unsynchronized, delay intentionally used to avoid the race conditions 
-   BigDecimal
-     used for handling precise values; seems double or float have some issues when used for handling precise values
-
-Program Output:
-CPU info on machine: [Intel, 4, 16, Core(TM) i5-4210U CPU @ 1.70GHz, 2394, 4]
-Total CPU usage: [99.2, 0.0, 0.8, 0.8, 0.0, 0.0, 0.0]
-individual cpu usage info: [{idle time=68.8, wait time=0.0, user time=18.8, combined=31.2, irq time=0.0, nice time=0.0, sys time=12.4}, {idle time=68.7, wait time=0.0, user time=28.1, combined=31.3, irq time=0.0, nice time=0.0, sys time=3.2}, {idle time=56.5, wait time=0.0, user time=34.3, combined=43.5, irq time=0.0, nice time=0.0, sys time=9.2}, {idle time=81.4, wait time=0.0, user time=12.4, combined=18.6, irq time=0.0, nice time=0.0, sys time=6.2}]
- */

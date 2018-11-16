@@ -1,15 +1,20 @@
+/**
+ * 
+ */
 package kev.connection;
 
-/**
- * @author Vivek
- * 
- * Connection testing 
- */
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * @author Vivek
+ * 
+ * Connection testing 
+ * 
+ * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
+ */
 public class TestSQLiteCxn {
   public static void main(String[] args) throws ClassNotFoundException, SQLException
   {

@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.Sigar;
 import kev.cpu.CpuInfoUsage;
 
@@ -24,15 +25,24 @@ import kev.cpu.CpuInfoUsage;
 public class CpuInfoUsageTest {
 	CpuInfoUsage cpuObj;
 	Sigar sigarObj;
+	CpuPerc[] cpuPercUsageListObj;
+	CpuPerc cpuPercTotalUsageObj;
 
-	static HashMap<String, Object> cpuMachineInfoMapTestArg = null;
+	static HashMap<String, Object> cpuMachineInfoMapTestArg;
+	static HashMap<String, Object> retrieveCpuPercMapTestArg;	
+    static HashMap<String, Object> expectedCpuInfoUsageMapTestArg;
+	static String expectedClassCpuName;
+	static String actualClassCpuName;
 	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public static void setUpBeforeClass() throws Exception {		
 		cpuMachineInfoMapTestArg = new HashMap<String, Object>();
+		retrieveCpuPercMapTestArg = new HashMap<String, Object>();
+		expectedClassCpuName = new CpuInfoUsage().getClass().getName();
+		actualClassCpuName = new CpuInfoUsage().getCpuInfoUsageObject().getClass().getName();
 		
 		// marist library machine
 		// Object[] cpuMachineInfoArrayForTest = { "Intel", "Core(TM) i5-7500 CPU @ 3.40GHz", 3408, 4, 4, 16 };
@@ -48,7 +58,19 @@ public class CpuInfoUsageTest {
 		
 		for(int index = 0; index < cpuMachineInfoKeyTestArg.length; index++) {
 			cpuMachineInfoMapTestArg.put(cpuMachineInfoKeyTestArg[index], cpuMachineInfoValueTestArg[index]);
-		}
+		}	
+		
+		String[] retrieveCpuPercKeyTestArg = {
+				"user time", "sys time", "idle time", "wait time", "nice time", "combined", "irq time"
+		};
+		
+		Integer[] retrieveCpuPercValueTestArg = {
+				18, 12, 68, 0, 0, 31, 0
+		};
+		
+		for(int index = 0; index < retrieveCpuPercKeyTestArg.length; index++) {
+			retrieveCpuPercMapTestArg.put(retrieveCpuPercKeyTestArg[index], retrieveCpuPercValueTestArg[index]);
+		}		
 	}
 
 	/**
@@ -66,6 +88,9 @@ public class CpuInfoUsageTest {
 	public void setUp() throws Exception {
 		this.cpuObj = new CpuInfoUsage();
 		this.sigarObj = new Sigar();
+		this.cpuPercUsageListObj = this.sigarObj.getCpuPercList();
+		this.cpuPercTotalUsageObj = this.sigarObj.getCpuPerc();
+		
 	}
 
 	/**
@@ -75,38 +100,54 @@ public class CpuInfoUsageTest {
 	public void tearDown() throws Exception {
 		this.cpuObj = null;
 		this.sigarObj = null;
+		this.cpuPercUsageListObj = null;
+		this.cpuPercTotalUsageObj = null;
 	}
 
 	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#getCpuInfoUsageObject()}.
 	 */
 	@Test
-	public void testGetCpuInfoUsageObject() {
-		assertTrue(this.cpuObj.getClass().equals(this.cpuObj.getCpuInfoUsageObject().getClass()));
+	public void testGetCpuInfoUsageObject() {		
+		assertTrue(expectedClassCpuName.equals(actualClassCpuName));
 	}
 	
-	/**
-	 * To get cpuMachineInoArrayForTest object array values
-	 * 
-	 * @param arg
-	 * @return mapped value avail in cpuMachineInoMapForTest Hashmap
-	 */
-	public static Object getCpuMachineInfoMapValues(String arg) {
-		return cpuMachineInfoMapTestArg.get(arg);
-	}	
-
 	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#retrieveCpuPerc(org.hyperic.sigar.CpuPerc)}.
 	 * @throws SigarException 
 	 * @throws InterruptedException 
 	 */
-	@Ignore
+	@Test
 	public void testRetrieveCpuPerc() throws InterruptedException, SigarException { 		
-		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
-		// HashMap<String, Object> expectedRectrieveCpuPerc;
+		HashMap<String, Object> actualRectrieveCpuPercMapTestArg = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
+		HashMap<String, Object> expectedRectrieveCpuPercMapTestArg = retrieveCpuPercMapTestArg;
 		
-		assertEquals(actualRectrieveCpuPerc.size(), 7);	
+		assertTrue(expectedRectrieveCpuPercMapTestArg.keySet().equals(actualRectrieveCpuPercMapTestArg.keySet()));	
 	}
+	
+	/**
+	 * Test method for {@link kev.cpu.CpuInfoUsage#getCpuPercUsageListObject()}.
+	 * @throws SigarException  
+	 */
+	@Test
+	public void testGetCpuPercUsageList() throws SigarException {
+		CpuPerc[] expectedCpuPercUsageListObj = this.cpuPercUsageListObj;
+		CpuPerc[] actualCpuPercUsageListObj = this.cpuObj.getCpuPercUsageListObject();
+		
+		assertTrue(expectedCpuPercUsageListObj.getClass().equals(actualCpuPercUsageListObj.getClass()));
+	}
+	
+	/**
+	 * Test method for {@link kev.cpu.CpuInfoUsage#getCpuPercTotalUsageObject()}.
+	 * @throws SigarException  
+	 */
+	@Test
+	public void testGetCpuPercTotalUsage() throws SigarException {
+		CpuPerc expectedCpuPercTotalUsageObj = this.cpuPercTotalUsageObj;
+		CpuPerc actualCpuPercTotalUsageObj = this.cpuObj.getCpuPercTotalUsageObject();
+		
+		assertTrue(expectedCpuPercTotalUsageObj.getClass().equals(actualCpuPercTotalUsageObj.getClass()));
+	}	
 
 	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#getIndividualCpuUsageInfo()}.
@@ -118,7 +159,7 @@ public class CpuInfoUsageTest {
 		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
 		// HashMap<String, Object> expectedRectrieveCpuPerc;
 		
-		assertEquals(actualRectrieveCpuPerc.size(), 7);	
+		assertEquals(7, actualRectrieveCpuPerc.size());	
 	}
 
 	/**
@@ -131,7 +172,7 @@ public class CpuInfoUsageTest {
 		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
 		// HashMap<String, Object> expectedRectrieveCpuPerc;
 		
-		assertEquals(actualRectrieveCpuPerc.size(), 7);	
+		assertEquals(7, actualRectrieveCpuPerc.size());	
 	}
 
 	/**
@@ -153,7 +194,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfoByVendor() throws SigarException {
 		String actual = (String) this.cpuObj.getCpuMachineInfoBy("vendor");
-		String expected = (String) getCpuMachineInfoMapValues("vendor");
+		String expected = (String) cpuMachineInfoMapTestArg.get("vendor");
 		
 		assertEquals(expected, actual);
 	}
@@ -165,7 +206,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfoByModel() throws SigarException {
 		String actual = (String) this.cpuObj.getCpuMachineInfoBy("model");
-		String expected = (String) getCpuMachineInfoMapValues("model");
+		String expected = (String) cpuMachineInfoMapTestArg.get("model");
 		
 		assertEquals(expected, actual);
 	}
@@ -177,7 +218,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfoByOperatingAt() throws SigarException {
 		Integer actual = (Integer) this.cpuObj.getCpuMachineInfoBy("operating at");
-		Integer expected = (Integer) getCpuMachineInfoMapValues("operating at");
+		Integer expected = (Integer) cpuMachineInfoMapTestArg.get("operating at");
 		
 		assertEquals(expected, actual);
 	}	
@@ -189,7 +230,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfoByTotalCores() throws SigarException {
 		Integer actual = (Integer) this.cpuObj.getCpuMachineInfoBy("total cores");
-		Integer expected = (Integer) getCpuMachineInfoMapValues("total cores");
+		Integer expected = (Integer) cpuMachineInfoMapTestArg.get("total cores");
 		
 		assertEquals(expected, actual);
 	}	
@@ -201,7 +242,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfoByTotalSockets() throws SigarException {
 		Integer actual = (Integer) this.cpuObj.getCpuMachineInfoBy("total sockets");
-		Integer expected = (Integer) getCpuMachineInfoMapValues("total sockets");
+		Integer expected = (Integer) cpuMachineInfoMapTestArg.get("total sockets");
 		
 		assertEquals(expected, actual);
 	}	
@@ -213,7 +254,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfoByCoresPerSocket() throws SigarException {
 		Integer actual = (Integer) this.cpuObj.getCpuMachineInfoBy("cores per socket");
-		Integer expected = (Integer) getCpuMachineInfoMapValues("cores per socket");
+		Integer expected = (Integer) cpuMachineInfoMapTestArg.get("cores per socket");
 		
 		assertEquals(expected, actual);
 	}	

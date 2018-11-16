@@ -19,6 +19,8 @@ import kev.utility.UtilityPack;
  * @author Vivek
  * 
  * Version Class provides all system realted info
+ * 
+ * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
  */
 public class VersionInfo extends SigarCommandBase {
 

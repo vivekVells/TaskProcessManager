@@ -80,4 +80,12 @@ public class UtilityPackTest {
 		
 		assertEquals(expected, actual);
 	}
+
+	/**
+	 * Test method for {@link kev.utility.UtilityPack#getUnkownIfValueNotPresent()}.
+	 */
+	@Test
+	public void testGetUnkownIfValueNotPresent() {
+		assertNotEquals("unknown", "value present");
+	}	
 }
