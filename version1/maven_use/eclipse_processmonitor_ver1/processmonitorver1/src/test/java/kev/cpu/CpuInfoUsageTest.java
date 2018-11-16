@@ -26,25 +26,30 @@ public class CpuInfoUsageTest {
 	CpuInfoUsage cpuObj;
 	Sigar sigar;
 
-	static HashMap<String, Object> cpuMachineInfoMapForTest = new HashMap<String, Object>();
+	static HashMap<String, Object> cpuMachineInfoMapTestArg = null;
 	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		cpuMachineInfoMapTestArg = new HashMap<String, Object>();
+		
 		// marist library machine
 		// Object[] cpuMachineInfoArrayForTest = { "Intel", "Core(TM) i5-7500 CPU @ 3.40GHz", 3408, 4, 4, 16 };
 		
 		// vivek machine
-		Object[] cpuMachineInfoArrayForTest = { "Intel", "Core(TM) i5-4210U CPU @ 1.70GHz", 2394, 4, 4, 16 };		
+		String[] cpuMachineInfoKeyTestArg = {
+			"vendor", "model", "operating at", "total cores", "total sockets", "cores per socket"	
+		};
 		
-		cpuMachineInfoMapForTest.put("vendor", cpuMachineInfoArrayForTest[0]);
-		cpuMachineInfoMapForTest.put("model", cpuMachineInfoArrayForTest[1]);
-		cpuMachineInfoMapForTest.put("operating at", cpuMachineInfoArrayForTest[2]);
-		cpuMachineInfoMapForTest.put("total cores", cpuMachineInfoArrayForTest[3]);
-		cpuMachineInfoMapForTest.put("total sockets", cpuMachineInfoArrayForTest[4]);
-		cpuMachineInfoMapForTest.put("cores per socket", cpuMachineInfoArrayForTest[5]);	
+		Object[] cpuMachineInfoValueTestArg = { 
+				"Intel", "Core(TM) i5-4210U CPU @ 1.70GHz", 2394, 4, 4, 16 
+		};		
+		
+		for(int index = 0; index < cpuMachineInfoKeyTestArg.length; index++) {
+			cpuMachineInfoMapTestArg.put(cpuMachineInfoKeyTestArg[index], cpuMachineInfoValueTestArg[index]);
+		}
 	}
 
 	/**
@@ -52,7 +57,7 @@ public class CpuInfoUsageTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		cpuMachineInfoMapForTest = new HashMap<String, Object>();
+		cpuMachineInfoMapTestArg = new HashMap<String, Object>();
 	}
 
 	/**
@@ -80,7 +85,7 @@ public class CpuInfoUsageTest {
 	 * @return mapped value avail in cpuMachineInoMapForTest Hashmap
 	 */
 	public static Object getCpuMachineInfoMapValues(String arg) {
-		return cpuMachineInfoMapForTest.get(arg);
+		return cpuMachineInfoMapTestArg.get(arg);
 	}	
 
 	/**
@@ -140,7 +145,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfo() throws SigarException {
 		HashMap<String, Object> actualGetCpuMachineInfoBy = this.cpuObj.getCpuMachineInfo();
-		HashMap<String, Object> expectedGetCpuMachineInfoBy = cpuMachineInfoMapForTest;
+		HashMap<String, Object> expectedGetCpuMachineInfoBy = cpuMachineInfoMapTestArg;
 		
 		assertEquals(expectedGetCpuMachineInfoBy, actualGetCpuMachineInfoBy);
 	}
@@ -224,7 +229,7 @@ public class CpuInfoUsageTest {
 	@Test
 	public void testGetCpuMachineInfoBy() throws SigarException {
 		HashMap<String, Object> actualGetCpuMachineInfoBy = this.cpuObj.getCpuMachineInfo();
-		HashMap<String, Object> expectedGetCpuMachineInfoBy = cpuMachineInfoMapForTest;
+		HashMap<String, Object> expectedGetCpuMachineInfoBy = cpuMachineInfoMapTestArg;
 		
 		assertEquals(expectedGetCpuMachineInfoBy, actualGetCpuMachineInfoBy);
 	}	
