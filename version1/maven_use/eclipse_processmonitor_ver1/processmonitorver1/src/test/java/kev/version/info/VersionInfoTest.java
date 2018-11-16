@@ -7,14 +7,15 @@ import static org.junit.Assert.*;
 
 import java.util.HashMap;
 
+import org.hyperic.sigar.Sigar;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import kev.version.info.VersionInfo;
+import kev.utility.UtilityPack;
 
 /**
  * @author Vivek 
@@ -22,6 +23,7 @@ import kev.version.info.VersionInfo;
  */
 public class VersionInfoTest {
     VersionInfo verInfoObj;
+    Sigar sigarObj;
     
     static String expectedHostNameTestArg = null;
     static String expectedUserNameTestArg = null;
@@ -49,13 +51,13 @@ public class VersionInfoTest {
 	    expectedSigarVersionInfoMap = new HashMap<String, Object>();
 	    
 	    String[] osVersionInfoKeyTestArg = {
-	    		"os description", "os name", "os vendor version", "os arch", 
+	    		"os description", "os name", "os arch", 
 	    		"os vendor code name", "os machine", "os patch level", 
 	    		"os data model", "os version", "os cpu endian"
 	    };
 	    
 	    Object[] osVersionInfoValueTestArg = {
-	    		"Microsoft \f", "Win32", "¨0k", "x64", 
+	    		"Microsoft \f", "Win32", "x64", 
 	    		"unknown", "unknown", "unknown", 
 	    		"64", "10.0", "little"    		
 	    };
@@ -120,6 +122,7 @@ public class VersionInfoTest {
 	@Before
 	public void setUp() throws Exception {
 		this.verInfoObj = new VersionInfo();
+		this.sigarObj = new Sigar();
 	}
 
 	/**
@@ -128,6 +131,7 @@ public class VersionInfoTest {
 	@After
 	public void tearDown() throws Exception {
 		this.verInfoObj = null;
+		this.sigarObj.close();
 	}
 
 	/**
@@ -373,16 +377,16 @@ public class VersionInfoTest {
 	/**
 	 * Test method for {@link kev.version.info.VersionInfo#getVersionInfoObject()}.
 	 */
-	@Ignore
+	@Test
 	public void testGetVersionInfoObject() {
-
+		assertTrue(this.verInfoObj.getClass().equals(this.verInfoObj.getVersionInfoObject().getClass()));
 	}
 
 	/**
 	 * Test method for {@link kev.version.info.VersionInfo#getSigarObject()}.
 	 */
-	@Ignore
+	@Test
 	public void testGetSigarObject() {
-
+		assertTrue(this.sigarObj.getClass().equals(UtilityPack.getSigarObject().getClass()));
 	}
 }

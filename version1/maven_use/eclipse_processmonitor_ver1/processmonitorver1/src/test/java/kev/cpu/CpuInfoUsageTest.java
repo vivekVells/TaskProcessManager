@@ -14,7 +14,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
-
 import org.hyperic.sigar.Sigar;
 import kev.cpu.CpuInfoUsage;
 
@@ -24,7 +23,7 @@ import kev.cpu.CpuInfoUsage;
  */
 public class CpuInfoUsageTest {
 	CpuInfoUsage cpuObj;
-	Sigar sigar;
+	Sigar sigarObj;
 
 	static HashMap<String, Object> cpuMachineInfoMapTestArg = null;
 	
@@ -66,7 +65,7 @@ public class CpuInfoUsageTest {
 	@Before
 	public void setUp() throws Exception {
 		this.cpuObj = new CpuInfoUsage();
-		this.sigar = new Sigar();
+		this.sigarObj = new Sigar();
 	}
 
 	/**
@@ -75,9 +74,17 @@ public class CpuInfoUsageTest {
 	@After
 	public void tearDown() throws Exception {
 		this.cpuObj = null;
-		this.sigar = null;
+		this.sigarObj = null;
 	}
 
+	/**
+	 * Test method for {@link kev.cpu.CpuInfoUsage#getCpuInfoUsageObject()}.
+	 */
+	@Test
+	public void testGetCpuInfoUsageObject() {
+		assertTrue(this.cpuObj.getClass().equals(this.cpuObj.getCpuInfoUsageObject().getClass()));
+	}
+	
 	/**
 	 * To get cpuMachineInoArrayForTest object array values
 	 * 
@@ -89,24 +96,13 @@ public class CpuInfoUsageTest {
 	}	
 
 	/**
-	 * Test method for {@link kev.cpu.CpuInfoUsage#getFormattedDecimal(java.lang.Double)}.
-	 */ 
-	@Test
-	public void testGetFormattedDecimal() {
-		Double actual = this.cpuObj.getFormattedDecimal(3.14159, 2);
-		Double expected = Double.valueOf(3.14); 
-		
-		assertEquals(expected, actual);
-	}
-
-	/**
 	 * Test method for {@link kev.cpu.CpuInfoUsage#retrieveCpuPerc(org.hyperic.sigar.CpuPerc)}.
 	 * @throws SigarException 
 	 * @throws InterruptedException 
 	 */
 	@Ignore
 	public void testRetrieveCpuPerc() throws InterruptedException, SigarException { 		
-		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigar.getCpuPerc());
+		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
 		// HashMap<String, Object> expectedRectrieveCpuPerc;
 		
 		assertEquals(actualRectrieveCpuPerc.size(), 7);	
@@ -119,7 +115,7 @@ public class CpuInfoUsageTest {
 	 */
 	@Ignore
 	public void testGetIndividualCpuUsageInfo() throws InterruptedException, SigarException {
-		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigar.getCpuPerc());
+		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
 		// HashMap<String, Object> expectedRectrieveCpuPerc;
 		
 		assertEquals(actualRectrieveCpuPerc.size(), 7);	
@@ -132,7 +128,7 @@ public class CpuInfoUsageTest {
 	 */
 	@Ignore
 	public void testGetTotalCpuUsageInfo() throws InterruptedException, SigarException {
-		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigar.getCpuPerc());
+		HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
 		// HashMap<String, Object> expectedRectrieveCpuPerc;
 		
 		assertEquals(actualRectrieveCpuPerc.size(), 7);	

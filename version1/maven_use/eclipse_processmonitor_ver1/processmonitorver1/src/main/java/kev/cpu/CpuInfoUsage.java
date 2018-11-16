@@ -5,14 +5,11 @@ package kev.cpu;
 
 import org.hyperic.sigar.cmd.Shell;
 import org.hyperic.sigar.cmd.SigarCommandBase;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.HashMap;
 import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.SigarLoader;
 import org.hyperic.sigar.SigarException;
-
+import kev.utility.UtilityPack;
 
 /**
  * @author Vivek
@@ -31,20 +28,14 @@ public class CpuInfoUsage extends SigarCommandBase{
     }
     
     /**
-     * Trim up to desired decimal places
+     * Get CpuInfoUsage class object
      * 
-     * @param arg
-     * @return trimmed double decimal value 
+     * @return creates & returns newly created cpu info usage object
      */
-    public Double getFormattedDecimal(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
-     
-        BigDecimal bd = new BigDecimal(Double.toString(value));
-        bd = bd.setScale(places, RoundingMode.HALF_UP);
-                
-        return Double.valueOf(bd.doubleValue());
-    }
-    
+    public CpuInfoUsage getCpuInfoUsageObject() {
+    	return new CpuInfoUsage();
+    }    
+       
     /**
      * Retrieve all possible usage info of requested CPU core 
      * 
@@ -55,13 +46,13 @@ public class CpuInfoUsage extends SigarCommandBase{
     public HashMap<String, Object> retrieveCpuPerc(CpuPerc cpu) throws InterruptedException {
     	HashMap<String, Object> retrieveCpuPercMap = new HashMap<String, Object>();
 
-        retrieveCpuPercMap.put("user time", getFormattedDecimal((cpu.getUser()*100), 1)); 
-        retrieveCpuPercMap.put("sys time", getFormattedDecimal((cpu.getSys()*100), 1));
-        retrieveCpuPercMap.put("idle time", getFormattedDecimal((cpu.getIdle()*100), 1));
-        retrieveCpuPercMap.put("wait time", getFormattedDecimal((cpu.getWait()*100), 1));
-        retrieveCpuPercMap.put("nice time", getFormattedDecimal((cpu.getNice()*100), 1));
-        retrieveCpuPercMap.put("combined", getFormattedDecimal((cpu.getCombined()*100), 1));
-        retrieveCpuPercMap.put("irq time", getFormattedDecimal((cpu.getIrq()*100), 1));
+        retrieveCpuPercMap.put("user time", UtilityPack.getFormattedDecimal((cpu.getUser()*100), 1)); 
+        retrieveCpuPercMap.put("sys time", UtilityPack.getFormattedDecimal((cpu.getSys()*100), 1));
+        retrieveCpuPercMap.put("idle time", UtilityPack.getFormattedDecimal((cpu.getIdle()*100), 1));
+        retrieveCpuPercMap.put("wait time", UtilityPack.getFormattedDecimal((cpu.getWait()*100), 1));
+        retrieveCpuPercMap.put("nice time", UtilityPack.getFormattedDecimal((cpu.getNice()*100), 1));
+        retrieveCpuPercMap.put("combined", UtilityPack.getFormattedDecimal((cpu.getCombined()*100), 1));
+        retrieveCpuPercMap.put("irq time", UtilityPack.getFormattedDecimal((cpu.getIrq()*100), 1));
         
         if (SigarLoader.IS_LINUX) {
             retrieveCpuPercMap.put("soft irq time", CpuPerc.format(cpu.getSoftIrq()));

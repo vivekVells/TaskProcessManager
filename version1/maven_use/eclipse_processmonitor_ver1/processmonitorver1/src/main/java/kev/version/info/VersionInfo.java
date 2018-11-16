@@ -13,6 +13,7 @@ import org.hyperic.sigar.SigarException;
 import org.hyperic.sigar.SigarLoader;
 import org.hyperic.sigar.cmd.Shell;
 import org.hyperic.sigar.cmd.SigarCommandBase;
+import kev.utility.UtilityPack;
 
 /**
  * @author Vivek
@@ -61,7 +62,7 @@ public class VersionInfo extends SigarCommandBase {
      */
     public String getFQDN() {    	
     	try {
-			return getSigarObject().getFQDN();
+			return UtilityPack.getSigarObject().getFQDN();
 		} catch (SigarException e) {
 			return "unkown";
 		}
@@ -91,7 +92,6 @@ public class VersionInfo extends SigarCommandBase {
     	osVersionMap.put("os machine", getUnkownIfValueNotPresent(osObj.getMachine()));
     	osVersionMap.put("os version", getUnkownIfValueNotPresent(osObj.getVersion()));
     	osVersionMap.put("os patch level", getUnkownIfValueNotPresent(osObj.getPatchLevel()));
-    	osVersionMap.put("os vendor version", getUnkownIfValueNotPresent(osObj.getVendorVersion()));
     	osVersionMap.put("os vendor code name", getUnkownIfValueNotPresent(osObj.getVendorCodeName()));
     	osVersionMap.put("os data model", getUnkownIfValueNotPresent(osObj.getDataModel()));
     	osVersionMap.put("os cpu endian", getUnkownIfValueNotPresent(osObj.getCpuEndian()));
@@ -170,21 +170,12 @@ public class VersionInfo extends SigarCommandBase {
     }
     
     /**
-     * Get Version class object
+     * Get Version Info class object
      * 
-     * @return creates & returns newly created version object
+     * @return creates & returns newly created version info object
      */
     public VersionInfo getVersionInfoObject() {
     	return new VersionInfo();
-    }
-    
-    /**
-     * Creates & returns new sigar object
-     * 
-     * @return newly created sigar object
-     */
-    public Sigar getSigarObject() {
-    	return new Sigar();
     }
 
     public static void main(String[] args) throws Exception { }
