@@ -2,7 +2,7 @@
  * systeminfo package will be the service to provide all 
  *   the system related information on request
  */
-package systeminfo;
+package kev.systeminfo;
 
 import java.io.File;
 import java.io.PrintStream;

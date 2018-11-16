@@ -1,12 +1,13 @@
 /**
  * cpu package will be the service for all cpu related info
  */
-package cpu;
+package kev.cpu;
 
 import org.hyperic.sigar.cmd.Shell;
 import org.hyperic.sigar.cmd.SigarCommandBase;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.SigarLoader;
@@ -30,15 +31,18 @@ public class CpuInfoUsage extends SigarCommandBase{
     }
     
     /**
-     * Trim upto desired decimal places
+     * Trim up to desired decimal places
      * 
      * @param arg
      * @return trimmed double decimal value 
      */
-    public Double getFormattedDecimal(Double arg) {
-    	NumberFormat nf = new DecimalFormat("#0.0");
-    	
-    	return Double.valueOf(nf.format(arg));
+    public Double getFormattedDecimal(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+     
+        BigDecimal bd = new BigDecimal(Double.toString(value));
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+                
+        return Double.valueOf(bd.doubleValue());
     }
     
     /**
@@ -51,13 +55,13 @@ public class CpuInfoUsage extends SigarCommandBase{
     public HashMap<String, Object> retrieveCpuPerc(CpuPerc cpu) throws InterruptedException {
     	HashMap<String, Object> retrieveCpuPercMap = new HashMap<String, Object>();
 
-        retrieveCpuPercMap.put("user time", getFormattedDecimal(cpu.getUser()*100)); 
-        retrieveCpuPercMap.put("sys time", getFormattedDecimal((cpu.getSys()*100)));
-        retrieveCpuPercMap.put("idle time", getFormattedDecimal(cpu.getIdle()*100));
-        retrieveCpuPercMap.put("wait time", getFormattedDecimal((cpu.getWait()*100)));
-        retrieveCpuPercMap.put("nice time", getFormattedDecimal((cpu.getNice()*100)));
-        retrieveCpuPercMap.put("combined", getFormattedDecimal((cpu.getCombined()*100)));
-        retrieveCpuPercMap.put("irq time", getFormattedDecimal((cpu.getIrq()*100)));
+        retrieveCpuPercMap.put("user time", getFormattedDecimal((cpu.getUser()*100), 1)); 
+        retrieveCpuPercMap.put("sys time", getFormattedDecimal((cpu.getSys()*100), 1));
+        retrieveCpuPercMap.put("idle time", getFormattedDecimal((cpu.getIdle()*100), 1));
+        retrieveCpuPercMap.put("wait time", getFormattedDecimal((cpu.getWait()*100), 1));
+        retrieveCpuPercMap.put("nice time", getFormattedDecimal((cpu.getNice()*100), 1));
+        retrieveCpuPercMap.put("combined", getFormattedDecimal((cpu.getCombined()*100), 1));
+        retrieveCpuPercMap.put("irq time", getFormattedDecimal((cpu.getIrq()*100), 1));
         
         if (SigarLoader.IS_LINUX) {
             retrieveCpuPercMap.put("soft irq time", CpuPerc.format(cpu.getSoftIrq()));
@@ -110,13 +114,13 @@ public class CpuInfoUsage extends SigarCommandBase{
 
         getCpuMachineInfoMap.put("vendor", info.getVendor());
         getCpuMachineInfoMap.put("model", info.getModel());
-        getCpuMachineInfoMap.put("operating", Integer.toString(info.getMhz()));
-        getCpuMachineInfoMap.put("total cores", Integer.toString(info.getTotalCores()));
+        getCpuMachineInfoMap.put("operating at", info.getMhz());
+        getCpuMachineInfoMap.put("total cores", info.getTotalCores());
         
         if ((info.getTotalCores() != info.getTotalSockets()) 
         		|| (info.getCoresPerSocket() > info.getTotalCores())) {
-        	getCpuMachineInfoMap.put("total sockets", Integer.toString(info.getTotalSockets()));
-        	getCpuMachineInfoMap.put("cores per socket", Integer.toString(info.getCoresPerSocket()));
+        	getCpuMachineInfoMap.put("total sockets", info.getTotalSockets());
+        	getCpuMachineInfoMap.put("cores per socket", info.getCoresPerSocket());
         }
         
         return getCpuMachineInfoMap;
@@ -142,11 +146,10 @@ public class CpuInfoUsage extends SigarCommandBase{
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        CpuInfoUsage cpuObj = new CpuInfoUsage();
-        
-        System.out.println("CPU info on machine: " + cpuObj.getCpuMachineInfo().values());
-        System.out.println("Total CPU usage: " + cpuObj.getTotalCpuUsageInfo().values());
-        System.out.println("individual cpu usage info: " + cpuObj.getIndividualCpuUsageInfo().values());        
+//        CpuInfoUsage cpuObj = new CpuInfoUsage();        
+//        System.out.println("CPU info on machine: " + cpuObj.getCpuMachineInfo().values());
+//        System.out.println("Total CPU usage: " + cpuObj.getTotalCpuUsageInfo().values());
+//        System.out.println("individual cpu usage info: " + cpuObj.getIndividualCpuUsageInfo().values());        
     }
 
 	@Override
@@ -160,9 +163,9 @@ public class CpuInfoUsage extends SigarCommandBase{
      retrieveValueBy("<key>") helps to retrieve any value of the desired key which is very easier
      easy to retrive desired entry and store in the db
      since unsynchronized, delay intentionally used to avoid the race conditions 
- */
+   BigDecimal
+     used for handling precise values; seems double or float have some issues when used for handling precise values
 
-/**
 Program Output:
 CPU info on machine: [Intel, 4, 16, Core(TM) i5-4210U CPU @ 1.70GHz, 2394, 4]
 Total CPU usage: [99.2, 0.0, 0.8, 0.8, 0.0, 0.0, 0.0]

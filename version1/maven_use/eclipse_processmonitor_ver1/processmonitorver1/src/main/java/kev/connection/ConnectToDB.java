@@ -1,7 +1,7 @@
 /**
  * This package will be the single point of contact for any kind of connection requests to DB
  */
-package ConnectionEstablish;
+package kev.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
