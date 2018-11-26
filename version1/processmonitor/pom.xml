@@ -53,6 +53,14 @@
 			<artifactId>de.flapdoodle.embed.mongo</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+        <!-- Note that org.hyperic groupId is not working -->
+		<!-- https://mvnrepository.com/artifact/org.fusesource/sigar -->
+		<dependency>
+			<groupId>org.fusesource</groupId>
+			<artifactId>sigar</artifactId>
+			<version>1.6.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
