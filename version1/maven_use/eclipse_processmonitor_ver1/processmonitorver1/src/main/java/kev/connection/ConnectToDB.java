@@ -8,8 +8,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
  
 /**
- *
  * @author Vivek
+ * 
+ * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
  */
 public class ConnectToDB {
 	

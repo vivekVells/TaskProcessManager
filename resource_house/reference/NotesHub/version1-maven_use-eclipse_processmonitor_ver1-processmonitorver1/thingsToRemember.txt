@@ -1,0 +1,18 @@
+Location: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
+
+For File: TaskProcessManager\version1\maven_use\eclipse_processmonitor_ver1\processmonitorver1\src\main\java\kev\cpu\CpuInfoUsage.java
+/**
+ Notes:
+   HashMap 
+     helps to store & retrieve different data types
+     retrieveValueBy("<key>") helps to retrieve any value of the desired key which is very easier
+     easy to retrive desired entry and store in the db
+     since unsynchronized, delay intentionally used to avoid the race conditions 
+   BigDecimal
+     used for handling precise values; seems double or float have some issues when used for handling precise values
+   combined time is the Sum of User + Sys + Nice + Wait time
+ Program Output:
+  CPU info on machine: [2394, Intel, 4, 16, Core(TM) i5-4210U CPU @ 1.70GHz, 4]
+  Total CPU usage: [92, 0, 2, 8, 0, 0, 6]
+  individual cpu usage info: [{idle time=94, wait time=0, user time=0, combined=6, irq time=0, nice time=0, sys time=6}, {idle time=100, wait time=0, user time=0, combined=0, irq time=0, nice time=0, sys time=0}, {idle time=97, wait time=0, user time=3, combined=3, irq time=0, nice time=0, sys time=0}, {idle time=100, wait time=0, user time=0, combined=0, irq time=0, nice time=0, sys time=0}]
+ */
