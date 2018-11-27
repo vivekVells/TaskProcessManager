@@ -76,6 +76,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+            <!-- have to fix this one
+            https://github.com/magnet/sigar-bundle
+            https://stackoverflow.com/questions/21543008/how-to-specify-dll-file-as-dependency-to-maven-runtime
+            https://stackoverflow.com/questions/8832751/no-sigar-x86-winnt-dll-in-java-library-path-error-when-using-hyperic-sigar-on
+            <plugin>
+                <groupId>org.hyperic</groupId>
+                <artifactId>sigar-amd64-winnt</artifactId> -->
+                <!-- add sigar dll to java path -->
+                <!--<configuration>
+                    <forkMode>once</forkMode>
+                    <workingDirectory>target</workingDirectory>
+                    <argLine>-Djava.library.path=${basedir}/lib</argLine>
+                </configuration>
+            </plugin>
+            -->
 		</plugins>
 	</build>
 </project>
