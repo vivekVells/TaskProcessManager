@@ -10,11 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import corp.tech.vivek.processmonitor.test.*;
 
 @RunWith(SpringRunner.class)
-
-@Suite.SuiteClasses({
-        WelcomeTest.class,
-})
-
 @SpringBootTest
 public class ProcessmonitorApplicationTests {
 	@Test
