@@ -68,18 +68,6 @@
             <artifactId>sigar</artifactId>
             <version>1.6.4</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.hyperic/sigar-amd64-winnt -->
-        <dependency>
-            <groupId>org.hyperic</groupId>
-            <artifactId>sigar-amd64-winnt</artifactId>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.hyperic/sigar-x86-winnt -->
-        <dependency>
-            <groupId>org.hyperic</groupId>
-            <artifactId>sigar-x86-winnt</artifactId>
-        </dependency>
     </dependencies>
 
 	<build>
