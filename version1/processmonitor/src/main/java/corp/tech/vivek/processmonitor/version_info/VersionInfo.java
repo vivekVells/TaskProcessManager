@@ -23,8 +23,6 @@ import org.springframework.web.bind.annotation.GetMapping;
  * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
  */
 public class VersionInfo extends SigarCommandBase {
-    VersionInfo verObj = new VersionInfo();
-
     public VersionInfo(Shell shell) { super(shell); }
 
     public VersionInfo() { super(); }
@@ -131,7 +129,7 @@ public class VersionInfo extends SigarCommandBase {
     /**
      * Desired version info of Java - retrievable by keyword string
      *
-     * @param osArg
+     * @param javaArg
      * @return matched key value
      */
     public Object getJavaVersionInfoBy(String javaArg) {
@@ -162,7 +160,7 @@ public class VersionInfo extends SigarCommandBase {
     /**
      * Desired version info of Sigar - retrievable by keyword string
      *
-     * @param osArg
+     * @param sigarArg
      * @return matched key value
      */
     public Object getSigarVersionInfoBy(String sigarArg) {
@@ -180,8 +178,4 @@ public class VersionInfo extends SigarCommandBase {
         return new VersionInfo();
     }
 
-    @GetMapping("/version")
-    public Object returnSigarVersionInfo() {
-        return verObj.getJavaVersionInfo();
-    }
 }
