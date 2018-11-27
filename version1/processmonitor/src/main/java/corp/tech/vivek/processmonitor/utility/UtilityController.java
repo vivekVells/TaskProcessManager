@@ -11,14 +11,25 @@ import java.util.HashMap;
 @RestController
 public class UtilityController {
     @GetMapping("/utility")
-    public Object showUtilityContents() {
-        HashMap<String, Object> mappedValues = new HashMap<>();
+    public Object verifyWorkingUtilityContents() {
+        HashMap<String, Object> mappedUtilityValues = new HashMap<>();
 
-        mappedValues.put("sigar object", UtilityPack.getSigarObject());
-//        mappedValues.put("formatted decimal places (3.1459, 2) => 3.14", UtilityPack.getFormattedDecimal(3.1459, 2));
-//        mappedValues.put("unknown value if not present (\"value present\" ) =>  \"value present\" ", UtilityPack.getUnkownIfValueNotPresent("value present"));
-//        mappedValues.put("unknown value if not present (\"\" ) =>  \"unknown\" ", UtilityPack.getUnkownIfValueNotPresent(""));
-
-        return UtilityPack.getSigarObject();
+        mappedUtilityValues.put("UtilityPack.getUnkownIfValueNotPresent(\"\"): ", UtilityPack.getUnkownIfValueNotPresent(""));
+        mappedUtilityValues.put("UtilityPack.getUnkownIfValueNotPresent(\"Value Present\"): ", UtilityPack.getUnkownIfValueNotPresent("Value Present"));
+        mappedUtilityValues.put("UtilityPack.getFormattedDecimal(3.145968, 2): ", UtilityPack.getFormattedDecimal(3.1459, 2));
+        mappedUtilityValues.put("UtilityPack.getFormattedDecimal(5.145968, 2): ", UtilityPack.getFormattedDecimal(5.145968, 3));
+        
+        return mappedUtilityValues;
     }
 }
+
+/*
+Output:
+for verifyWorkingUtilityContents
+{
+  "UtilityPack.getUnkownIfValueNotPresent(\"\"): ": "unknown",
+  "UtilityPack.getUnkownIfValueNotPresent(\"Value Present\"): ": "Value Present",
+  "UtilityPack.getFormattedDecimal(5.145968, 2): ": 5.146,
+  "UtilityPack.getFormattedDecimal(3.145968, 2): ": 3.15
+}
+ */
