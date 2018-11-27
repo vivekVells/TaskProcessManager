@@ -53,7 +53,22 @@
 			<artifactId>de.flapdoodle.embed.mongo</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+
+        <!-- use log4j logger -->
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <!-- Sigar maven repo - have to do this on my own. to learn how to host my own maven repo -->
+        <!-- https://mvnrepository.com/artifact/com.github.votoanthuan/sigar -->
+        <dependency>
+            <groupId>com.github.votoanthuan</groupId>
+            <artifactId>sigar</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
@@ -63,6 +78,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
