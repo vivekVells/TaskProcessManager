@@ -6,6 +6,7 @@ package corp.tech.vivek.processmonitor.utility;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.hyperic.sigar.OperatingSystem;
 import org.hyperic.sigar.Sigar;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -23,6 +24,15 @@ public class UtilityPack {
      */
     public static Sigar getSigarObject() {
         return new Sigar();
+    }
+
+    /**
+     * Creates & returns the operating system instance
+     *
+     * @return operating system instance
+     */
+    public static OperatingSystem getOperatingSystemInstance() {
+        return OperatingSystem.getInstance();
     }
 
     /**

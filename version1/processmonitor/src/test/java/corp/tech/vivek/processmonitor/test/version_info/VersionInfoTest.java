@@ -1,15 +1,21 @@
 package corp.tech.vivek.processmonitor.test.version_info;
 
+import corp.tech.vivek.processmonitor.utility.UtilityPack;
+import corp.tech.vivek.processmonitor.version_info.UtilityPackForVersion;
 import corp.tech.vivek.processmonitor.version_info.VersionInfo;
+import org.hyperic.sigar.OperatingSystem;
 import org.hyperic.sigar.Sigar;
+import org.hyperic.sigar.SigarException;
 import org.junit.*;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 
 /**
  * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
  *
- * shortNote: 30 tests in 4s 777ms
+ * shortNote: 30 tests in 145ms
  */
 public class VersionInfoTest {
     VersionInfo verInfoObj;
@@ -31,30 +37,24 @@ public class VersionInfoTest {
     public static void setUpBeforeClass() throws Exception {
         // setting up the expected values for testing
 
-        expectedHostNameTestArg = "kev";
-        expectedUserNameTestArg = "Vivek-Pc";
+        expectedHostNameTestArg = getHostNameForTest();
+        expectedUserNameTestArg = System.getProperty("user.name");
+        expectedFQDNTestArg = getFQDNForTest();
         expectedArchLibTestArg = "sigar-amd64-winnt.dll";
-        expectedFQDNTestArg = "192.168.56.1";
 
         expectedOsVersionInfoMap = new HashMap<String, Object>();
         expectedJavaVersionInfoMap = new HashMap<String, Object>();
         expectedSigarVersionInfoMap = new HashMap<String, Object>();
 
-        String[] osVersionInfoKeyTestArg = {
-                "os description", "os name", "os arch",
-                "os vendor code name", "os machine", "os patch level",
-                "os data model", "os version", "os cpu endian"
-        };
-
-        Object[] osVersionInfoValueTestArg = {
-                "Microsoft \f", "Win32", "x64",
-                "unknown", "unknown", "unknown",
-                "64", "10.0", "little"
-        };
-
-        for(int index = 0; index < osVersionInfoKeyTestArg.length; index++) {
-            expectedOsVersionInfoMap.put(osVersionInfoKeyTestArg[index], osVersionInfoValueTestArg[index]);
-        }
+        expectedOsVersionInfoMap.put("os description", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getDescription()));
+        expectedOsVersionInfoMap.put("os name", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getName()));
+        expectedOsVersionInfoMap.put("os arch", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getArch()));
+        expectedOsVersionInfoMap.put("os machine", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getMachine()));
+        expectedOsVersionInfoMap.put("os version", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getVersion()));
+        expectedOsVersionInfoMap.put("os patch level", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getPatchLevel()));
+        expectedOsVersionInfoMap.put("os vendor code name", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getVendorCodeName()));
+        expectedOsVersionInfoMap.put("os data model", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getDataModel()));
+        expectedOsVersionInfoMap.put("os cpu endian", UtilityPack.getUnkownIfValueNotPresent(UtilityPack.getOperatingSystemInstance().getCpuEndian()));
 
         String[] javaVersionInfoKeyTestArg = {
                 "java vm version",
@@ -122,6 +122,32 @@ public class VersionInfoTest {
     public void tearDown() throws Exception {
         this.verInfoObj = null;
         this.sigarObj.close();
+    }
+
+    /**
+     * Retrieve Host name of the machine
+     *
+     * @return String host name
+     */
+    public static String getHostNameForTest() {
+        try {
+            return InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException e) {
+            return "unknown";
+        }
+    }
+
+    /**
+     * Retrieve Fully Qualified Domain Name of the machine
+     *
+     * @return FQDN
+     */
+    public static String getFQDNForTest() {
+        try {
+            return UtilityPackForVersion.getSigarObject().getFQDN();
+        } catch (SigarException e) {
+            return "unknown";
+        }
     }
 
     /**
