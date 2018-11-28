@@ -2,6 +2,7 @@ package corp.tech.vivek.processmonitor.test.cpu_info;
 
 import corp.tech.vivek.processmonitor.cpu_info.CpuInfoUsage;
 import corp.tech.vivek.processmonitor.utility.UtilityPack;
+import org.hyperic.sigar.CpuInfo;
 import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
@@ -36,7 +37,7 @@ public class CpuInfoUsageTest {
         expectedClassCpuName = new CpuInfoUsage().getClass().getName();
         actualClassCpuName = new CpuInfoUsage().getCpuInfoUsageObject().getClass().getName();
 
-        org.hyperic.sigar.CpuInfo info = UtilityPack.getSigarObject().getCpuInfoList()[0];
+        CpuInfo info = UtilityPack.getSigarObject().getCpuInfoList()[0];
 
         cpuMachineInfoMapTestArg.put("vendor", UtilityPack.getUnkownIfValueNotPresent(info.getVendor()));
         cpuMachineInfoMapTestArg.put("model", UtilityPack.getUnkownIfValueNotPresent(info.getModel()));

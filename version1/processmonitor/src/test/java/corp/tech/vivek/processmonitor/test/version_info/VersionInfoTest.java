@@ -1,14 +1,11 @@
 package corp.tech.vivek.processmonitor.test.version_info;
 
 import corp.tech.vivek.processmonitor.utility.UtilityPack;
-import corp.tech.vivek.processmonitor.version_info.UtilityPackForVersion;
 import corp.tech.vivek.processmonitor.version_info.VersionInfo;
 import org.hyperic.sigar.Sigar;
-import org.hyperic.sigar.SigarException;
 import org.junit.*;
 
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.HashMap;
 
 /**
@@ -34,10 +31,14 @@ public class VersionInfoTest {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         // setting up the expected values for testing
+        try {
+            expectedHostNameTestArg = InetAddress.getLocalHost().getHostName();
+            expectedFQDNTestArg = new Sigar().getFQDN();
+        } catch (Exception ex) {
+            expectedHostNameTestArg = expectedFQDNTestArg = "unknown";
+        }
 
-        expectedHostNameTestArg = getHostNameForTest();
         expectedUserNameTestArg = System.getProperty("user.name");
-        expectedFQDNTestArg = getFQDNForTest();
 
         expectedOsVersionInfoMap = new HashMap<String, Object>();
         expectedJavaVersionInfoMap = new HashMap<String, Object>();
@@ -118,32 +119,6 @@ public class VersionInfoTest {
     public void tearDown() throws Exception {
         this.verInfoObj = null;
         this.sigarObj.close();
-    }
-
-    /**
-     * Retrieve Host name of the machine
-     *
-     * @return String host name
-     */
-    public static String getHostNameForTest() {
-        try {
-            return InetAddress.getLocalHost().getHostName();
-        } catch (UnknownHostException e) {
-            return "unknown";
-        }
-    }
-
-    /**
-     * Retrieve Fully Qualified Domain Name of the machine
-     *
-     * @return FQDN
-     */
-    public static String getFQDNForTest() {
-        try {
-            return UtilityPackForVersion.getSigarObject().getFQDN();
-        } catch (SigarException e) {
-            return "unknown";
-        }
     }
 
     /**
