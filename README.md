@@ -8,9 +8,10 @@
 ### Project Working Demo (all demo files location: [link](https://github.com/vivekVells/TaskProcessManager/tree/master/demo-review))
 - [Video Link](to be updated)
 - [Working Demo - PDF sheet](to be updated)
+- [Working Functionality Pictures Demo]()
 
 ### Tech Usage Info 
-- Version 1: Java, Sigar, SQLite, Spring Boot, Maven, GitHub
+- Version 1: Java, Spring Boot, Maven, GitHub, Semaphore CI, Apache Derby, Sigar, Log4j
 
 ### Features
 - View System Level info (aimed as of now)
@@ -28,9 +29,9 @@
 - Using SIGAR for educational purpose only. (disclaimer made to avoid licensing issues with SIGAR)
 
 ### Instructions to run this project in your machine:
-- Used: IDE: Eclipse | OS: Windows, Linux
+- Used: IDE: IntelliJ | OS: Windows, Linux
 
-## To run the Web App
+## To run the Web App (few recent changes made. will be updating this soon)
 - setup java & maven env in your local machine. 
   - Windows: https://www.mkyong.com/maven/how-to-install-maven-in-windows/
   - Linux: for maven - https://www.youtube.com/watch?v=i8hSPwXZ0UI
@@ -56,6 +57,17 @@
 ### Application Screenshots So Far(wanna avoid scrolling a lot, use above pdf sheet)
 Beware of the lots of scrolling to come :P
 
+### Ver 1.1 Screenshots accordingly
+## Welcome Screen - http://localhost:8080/welcome
+Welcome Screen![]()
+## Version Info Screen - http://localhost:8080/version
+version info Screen![]()
+## Cpu Usage Screen - http://localhost:8080/cpu
+Cpu Usage Screen![]()
+## Utility Info Screen - http://localhost:8080/utility
+Utility Screen![]()
+
+### Old versions screenshots below. 
 ## Version 1 - Web UI 
 Initial Setup![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/1st%20verison%20output%20-%20localhost_8080%20-%20Google%20Chrome%2010_24_2018%2011_47_10%20PM.png)
 ## Version 1 - Verifying the system level info 
