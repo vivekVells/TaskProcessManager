@@ -1,16 +1,18 @@
 package corp.tech.vivek.processmonitor.test.utility;
 
 import corp.tech.vivek.processmonitor.utility.UtilityPack;
+import org.hyperic.sigar.OperatingSystem;
 import org.hyperic.sigar.Sigar;
 import org.junit.*;
 
 /**
  * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
  *
- * shortNote: 4 tests in 62ms
+ * shortNote: 5 tests in 43ms
  */
 public class UtilityPackTest {
     Sigar sigarObj;
+    OperatingSystem osObj;
 
     /**
      * @throws java.lang.Exception
@@ -32,6 +34,7 @@ public class UtilityPackTest {
     @Before
     public void setUp() throws Exception {
         this.sigarObj = new Sigar();
+        this.osObj = OperatingSystem.getInstance();
     }
 
     /**
@@ -42,6 +45,7 @@ public class UtilityPackTest {
         // Release any native resources associated with this sigar instance.
         this.sigarObj.close();
         this.sigarObj = null;
+        this.osObj = null;
     }
 
     /**
@@ -50,6 +54,14 @@ public class UtilityPackTest {
     @Test
     public void testGetSigarObject() {
         Assert.assertTrue(this.sigarObj.getClass().equals(UtilityPack.getSigarObject().getClass()));
+    }
+
+    /**
+     * Test method for {@link UtilityPack#getOperatingSystemInstance()}.
+     */
+    @Test
+    public void testGetOperatingSystemInstance() {
+        Assert.assertTrue(this.osObj.getClass().equals(UtilityPack.getOperatingSystemInstance().getClass()));
     }
 
     /**

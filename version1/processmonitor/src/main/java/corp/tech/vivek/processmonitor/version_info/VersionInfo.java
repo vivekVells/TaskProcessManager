@@ -13,10 +13,9 @@ import org.hyperic.sigar.SigarException;
 import org.hyperic.sigar.SigarLoader;
 import org.hyperic.sigar.cmd.Shell;
 import org.hyperic.sigar.cmd.SigarCommandBase;
-import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author Vivek
+ * @author Vivek Velaiyappan | vivekvellaiyappans@gmail.com
  *
  * Version Class provides all system realted info
  *
@@ -64,7 +63,7 @@ public class VersionInfo extends SigarCommandBase {
         try {
             return UtilityPackForVersion.getSigarObject().getFQDN();
         } catch (SigarException e) {
-            return "unkown";
+            return "unknown";
         }
     }
 

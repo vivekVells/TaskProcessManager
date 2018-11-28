@@ -3,6 +3,7 @@
  */
 package corp.tech.vivek.processmonitor.cpu_info;
 
+import corp.tech.vivek.processmonitor.utility.UtilityPack;
 import org.hyperic.sigar.cmd.Shell;
 import org.hyperic.sigar.cmd.SigarCommandBase;
 import java.util.HashMap;
@@ -11,7 +12,7 @@ import org.hyperic.sigar.SigarLoader;
 import org.hyperic.sigar.SigarException;
 
 /**
- * @author Vivek
+ * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
  *
  * CpuInfo class will pull all cpu related info from system
  *
@@ -128,16 +129,12 @@ public class CpuInfoUsage extends SigarCommandBase{
         HashMap<String, Object> getCpuMachineInfoMap = new HashMap<String, Object>();
         org.hyperic.sigar.CpuInfo info = this.sigar.getCpuInfoList()[0];
 
-        getCpuMachineInfoMap.put("vendor", info.getVendor());
-        getCpuMachineInfoMap.put("model", info.getModel());
+        getCpuMachineInfoMap.put("vendor", UtilityPack.getUnkownIfValueNotPresent(info.getVendor()));
+        getCpuMachineInfoMap.put("model", UtilityPack.getUnkownIfValueNotPresent(info.getModel()));
         getCpuMachineInfoMap.put("operating at", info.getMhz());
         getCpuMachineInfoMap.put("total cores", info.getTotalCores());
-
-        if ((info.getTotalCores() != info.getTotalSockets())
-                || (info.getCoresPerSocket() > info.getTotalCores())) {
-            getCpuMachineInfoMap.put("total sockets", info.getTotalSockets());
-            getCpuMachineInfoMap.put("cores per socket", info.getCoresPerSocket());
-        }
+        getCpuMachineInfoMap.put("total sockets", info.getTotalSockets());
+        getCpuMachineInfoMap.put("cores per socket", info.getCoresPerSocket());
 
         return getCpuMachineInfoMap;
     }

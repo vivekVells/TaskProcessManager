@@ -6,16 +6,15 @@ package corp.tech.vivek.processmonitor.utility;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.hyperic.sigar.OperatingSystem;
 import org.hyperic.sigar.Sigar;
-import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * @author Vivek
+ * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
  *
  * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
  */
 public class UtilityPack {
-
     /**
      * Creates & returns new sigar object
      *
@@ -26,9 +25,18 @@ public class UtilityPack {
     }
 
     /**
+     * Creates & returns the operating system instance
+     *
+     * @return operating system instance
+     */
+    public static OperatingSystem getOperatingSystemInstance() {
+        return OperatingSystem.getInstance();
+    }
+
+    /**
      * Trim up to desired decimal places
      *
-     * @param arg
+     * @param places
      * @return trimmed double decimal value
      */
     public static Double getFormattedDecimal(double value, int places) {
