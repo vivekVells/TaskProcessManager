@@ -8,7 +8,7 @@
 ### Project Working Demo (all demo files location: [link](https://github.com/vivekVells/TaskProcessManager/tree/master/demo-review))
 - [Video Link](to be updated)
 - [Working Demo - PDF sheet](to be updated)
-- [Working Functionality Pictures Demo]()
+- [Working Functionality Pictures Demo](https://github.com/vivekVells/TaskProcessManager#application-screenshots-so-farwanna-avoid-scrolling-a-lot-use-above-pdf-sheet)
 
 ### Tech Usage Info 
 - Version 1: Java, Spring Boot, Maven, GitHub, Semaphore CI, Apache Derby, Sigar, Log4j
@@ -58,14 +58,16 @@
 Beware of the lots of scrolling to come :P
 
 ### Ver 1.1 Screenshots accordingly
-## Welcome Screen - http://localhost:8080/welcome
-Welcome Screen![]()
-## Version Info Screen - http://localhost:8080/version
-version info Screen![]()
-## Cpu Usage Screen - http://localhost:8080/cpu
-Cpu Usage Screen![]()
-## Utility Info Screen - http://localhost:8080/utility
-Utility Screen![]()
+#### Collage - Screen: Welcome, Version Info, CPU Usage info, Utility Info
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/collaged%20screens%20of%20welcome%20-%20cpu%20-%20version%20-%20utility.PNG)
+#### Welcome Screen - http://localhost:8080/welcome
+Welcome Screen![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/ver1.1%20-%20welcome%20screen.PNG)
+#### Version Info Screen - http://localhost:8080/version
+version info Screen![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/ver1.1%20-%20version%20screen%20output.PNG)
+#### Cpu Usage Screen - http://localhost:8080/cpu
+Cpu Usage Screen![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/ver1.1%20-%20cpu%20screen.PNG)
+#### Utility Info Screen - http://localhost:8080/utility
+Utility Screen![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/ver1.1%20-%20utlity%20screen.PNG)
 
 ### Old versions screenshots below. 
 ## Version 1 - Web UI 
