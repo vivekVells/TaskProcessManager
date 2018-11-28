@@ -13,8 +13,8 @@ public class MainController {
         return "homepage";
     }
 
-    @GetMapping("/home")
+    @GetMapping("/testresponse")
     public String homePage() {
-        return "homepage";
+        return "teststaticwebresponse";
     }
 }
