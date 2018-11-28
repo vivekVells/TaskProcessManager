@@ -60,6 +60,8 @@ Beware of the lots of scrolling to come :P
 ### Ver 1.1 Screenshots accordingly
 #### Collage - Screen: Welcome, Version Info, CPU Usage info, Utility Info
 ![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/collaged%20screens%20of%20welcome%20-%20cpu%20-%20version%20-%20utility.PNG)
+#### Default / Home Screen - http://localhost:8080 or http://localhost:8080/home
+![](https://github.com/vivekVells/TaskProcessManager/blob/SwaggerSpringBoot/demo-review/version1/spring-boot/ver1.2/v1.2-default-home-page-web-page-response.PNG)
 #### Welcome Screen - http://localhost:8080/welcome
 Welcome Screen![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/ver1.1%20-%20welcome%20screen.PNG)
 #### Version Info Screen - http://localhost:8080/version
@@ -68,6 +70,14 @@ version info Screen![](https://github.com/vivekVells/TaskProcessManager/blob/mas
 Cpu Usage Screen![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/ver1.1%20-%20cpu%20screen.PNG)
 #### Utility Info Screen - http://localhost:8080/utility
 Utility Screen![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/ver1.1%20-%20utlity%20screen.PNG)
+#### Test Web Response - http://localhost:8080/testresponse
+![](https://github.com/vivekVells/TaskProcessManager/blob/SwaggerSpringBoot/demo-review/version1/spring-boot/ver1.2/v1.2-default-home-page-web-page-response.PNG)
+#### Swagger UI Web page - http://localhost:8080/swagger-ui.html
+![](https://github.com/vivekVells/TaskProcessManager/blob/SwaggerSpringBoot/demo-review/version1/spring-boot/ver1.2/v1.2-swagger-ui-info.PNG)
+#### Swagger Meta Data for this Application - http://localhost:8080/v2/api-docs
+![](https://github.com/vivekVells/TaskProcessManager/blob/SwaggerSpringBoot/demo-review/version1/spring-boot/ver1.2/v1.2-application-swagger-meta-data-json-output.PNG)
+#### Page Not Found Error Page - http://localhost:8080/404.html
+![](https://github.com/vivekVells/TaskProcessManager/blob/SwaggerSpringBoot/demo-review/version1/spring-boot/ver1.2/v1.2-page-not-found-error-page.PNG)
 
 ### Old versions screenshots below. 
 ## Version 1 - Web UI 
@@ -75,4 +85,3 @@ Initial Setup![](https://github.com/vivekVells/TaskProcessManager/blob/master/de
 ## Version 1 - Verifying the system level info 
 System Related Information![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/System%20Info.PNG)
 CPU Related Information![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/CPU%20info.PNG)
-
