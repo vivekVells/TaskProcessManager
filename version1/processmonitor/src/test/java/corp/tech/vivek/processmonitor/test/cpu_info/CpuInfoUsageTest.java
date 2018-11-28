@@ -1,6 +1,7 @@
 package corp.tech.vivek.processmonitor.test.cpu_info;
 
 import corp.tech.vivek.processmonitor.cpu_info.CpuInfoUsage;
+import corp.tech.vivek.processmonitor.utility.UtilityPack;
 import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
@@ -35,21 +36,14 @@ public class CpuInfoUsageTest {
         expectedClassCpuName = new CpuInfoUsage().getClass().getName();
         actualClassCpuName = new CpuInfoUsage().getCpuInfoUsageObject().getClass().getName();
 
-        // marist library machine
-        // Object[] cpuMachineInfoArrayForTest = { "Intel", "Core(TM) i5-7500 CPU @ 3.40GHz", 3408, 4, 4, 16 };
+        org.hyperic.sigar.CpuInfo info = UtilityPack.getSigarObject().getCpuInfoList()[0];
 
-        // vivek machine
-        String[] cpuMachineInfoKeyTestArg = {
-                "vendor", "model", "operating at", "total cores", "total sockets", "cores per socket"
-        };
-
-        Object[] cpuMachineInfoValueTestArg = {
-                "Intel", "Core(TM) i5-4210U CPU @ 1.70GHz", 2394, 4, 4, 16
-        };
-
-        for(int index = 0; index < cpuMachineInfoKeyTestArg.length; index++) {
-            cpuMachineInfoMapTestArg.put(cpuMachineInfoKeyTestArg[index], cpuMachineInfoValueTestArg[index]);
-        }
+        cpuMachineInfoMapTestArg.put("vendor", UtilityPack.getUnkownIfValueNotPresent(info.getVendor()));
+        cpuMachineInfoMapTestArg.put("model", UtilityPack.getUnkownIfValueNotPresent(info.getModel()));
+        cpuMachineInfoMapTestArg.put("operating at", info.getMhz());
+        cpuMachineInfoMapTestArg.put("total cores", info.getTotalCores());
+        cpuMachineInfoMapTestArg.put("total sockets", info.getTotalSockets());
+        cpuMachineInfoMapTestArg.put("cores per socket", info.getCoresPerSocket());
 
         String[] retrieveCpuPercKeyTestArg = {
                 "user time", "sys time", "idle time", "wait time", "nice time", "combined", "irq time"
@@ -145,7 +139,7 @@ public class CpuInfoUsageTest {
      * @throws SigarException
      * @throws InterruptedException
      */
-    @Ignore
+    @Test
     public void testGetIndividualCpuUsageInfo() throws InterruptedException, SigarException {
         HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
         // HashMap<String, Object> expectedRectrieveCpuPerc;
@@ -158,7 +152,7 @@ public class CpuInfoUsageTest {
      * @throws SigarException
      * @throws InterruptedException
      */
-    @Ignore
+    @Test
     public void testGetTotalCpuUsageInfo() throws InterruptedException, SigarException {
         HashMap<String, Object> actualRectrieveCpuPerc = this.cpuObj.retrieveCpuPerc(this.sigarObj.getCpuPerc());
         // HashMap<String, Object> expectedRectrieveCpuPerc;

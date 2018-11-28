@@ -3,7 +3,6 @@ package corp.tech.vivek.processmonitor.test.version_info;
 import corp.tech.vivek.processmonitor.utility.UtilityPack;
 import corp.tech.vivek.processmonitor.version_info.UtilityPackForVersion;
 import corp.tech.vivek.processmonitor.version_info.VersionInfo;
-import org.hyperic.sigar.OperatingSystem;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
 import org.junit.*;
@@ -23,7 +22,6 @@ public class VersionInfoTest {
 
     static String expectedHostNameTestArg = null;
     static String expectedUserNameTestArg = null;
-    static String expectedArchLibTestArg = null;
     static String expectedFQDNTestArg = null;
 
     static HashMap<String, Object> expectedOsVersionInfoMap = null;
@@ -40,7 +38,6 @@ public class VersionInfoTest {
         expectedHostNameTestArg = getHostNameForTest();
         expectedUserNameTestArg = System.getProperty("user.name");
         expectedFQDNTestArg = getFQDNForTest();
-        expectedArchLibTestArg = "sigar-amd64-winnt.dll";
 
         expectedOsVersionInfoMap = new HashMap<String, Object>();
         expectedJavaVersionInfoMap = new HashMap<String, Object>();
@@ -98,7 +95,6 @@ public class VersionInfoTest {
     public static void tearDownAfterClass() throws Exception {
         expectedHostNameTestArg = null;
         expectedUserNameTestArg = null;
-        expectedArchLibTestArg = null;
         expectedFQDNTestArg = null;
 
         expectedOsVersionInfoMap = null;

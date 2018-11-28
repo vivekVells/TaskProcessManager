@@ -15,7 +15,7 @@ import org.hyperic.sigar.cmd.Shell;
 import org.hyperic.sigar.cmd.SigarCommandBase;
 
 /**
- * @author Vivek
+ * @author Vivek Velaiyappan | vivekvellaiyappans@gmail.com
  *
  * Version Class provides all system realted info
  *
