@@ -50,6 +50,22 @@
             <version>2.1.0.RELEASE</version>
         </dependency>
 
+        <!-- webjar for bootstrap-->
+        <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <!-- webjar for jquery -->
+        <!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.3.1-1</version>
+        </dependency>
+
         <dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derby</artifactId>
