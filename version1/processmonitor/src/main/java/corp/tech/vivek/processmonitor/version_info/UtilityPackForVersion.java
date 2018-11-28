@@ -28,7 +28,7 @@ public class UtilityPackForVersion {
     /**
      * Trim up to desired decimal places
      *
-     * @param arg
+     * @param places
      * @return trimmed double decimal value
      */
     public static Double getFormattedDecimal(double value, int places) {
