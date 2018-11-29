@@ -2,7 +2,7 @@ package corp.tech.vivek.processmonitor.test;
 
 import corp.tech.vivek.processmonitor.test.cpu_info.CpuInfoUsageTest;
 import corp.tech.vivek.processmonitor.test.utility.UtilityPackTest;
-import corp.tech.vivek.processmonitor.test.version_info.VersionInfoTest;
+import corp.tech.vivek.processmonitor.test.version_info.VersionInfoBaseModelTest;
 import corp.tech.vivek.processmonitor.test.welcome.WelcomeTest;
 
 import org.junit.runners.Suite;
@@ -12,7 +12,7 @@ import org.junit.runners.Suite;
  */
 @Suite.SuiteClasses({
         WelcomeTest.class,
-        VersionInfoTest.class,
+        VersionInfoBaseModelTest.class,
         UtilityPackTest.class,
         CpuInfoUsageTest.class,
 })
