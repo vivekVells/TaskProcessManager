@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
  */
 @RestController
-public class VersionInfoController {
+public class VersionInfoControllerBase {
 
     /**
      *
@@ -17,7 +17,7 @@ public class VersionInfoController {
      */
     @GetMapping("/version")
     public Object verifyWorkingVersionInfoContents() {
-        VersionInfo verObj = new VersionInfo();
+        VersionInfoBase verObj = new VersionInfoBase();
         HashMap<String, Object> mappedVersionValues = new HashMap<>();
 
         mappedVersionValues.put("host name", verObj.getHostName());

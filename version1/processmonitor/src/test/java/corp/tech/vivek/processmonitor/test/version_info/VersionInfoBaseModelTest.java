@@ -1,7 +1,7 @@
 package corp.tech.vivek.processmonitor.test.version_info;
 
 import corp.tech.vivek.processmonitor.utility.UtilityPack;
-import corp.tech.vivek.processmonitor.version_info.VersionInfo;
+import corp.tech.vivek.processmonitor.version_info.VersionInfoBase;
 import org.hyperic.sigar.Sigar;
 import org.junit.*;
 
@@ -13,8 +13,8 @@ import java.util.HashMap;
  *
  * shortNote: 30 tests in 145ms
  */
-public class VersionInfoTest {
-    VersionInfo verInfoObj;
+public class VersionInfoBaseModelTest {
+    VersionInfoBase verInfoObj;
     Sigar sigarObj;
 
     static String expectedHostNameTestArg = null;
@@ -108,7 +108,7 @@ public class VersionInfoTest {
      */
     @Before
     public void setUp() throws Exception {
-        this.verInfoObj = new VersionInfo();
+        this.verInfoObj = new VersionInfoBase();
         this.sigarObj = new Sigar();
     }
 
@@ -122,7 +122,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getHostName()}
+     * Test method for {@link VersionInfoBase#getHostName()}
      */
     @Test
     public void testGetHostName() {
@@ -130,7 +130,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getFQDN()}.
+     * Test method for {@link VersionInfoBase#getFQDN()}.
      */
     @Test
     public void testGetFQDN() {
@@ -138,7 +138,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getUsername()}.
+     * Test method for {@link VersionInfoBase#getUsername()}.
      */
     @Test
     public void testGetUsername() {
@@ -146,7 +146,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfo()}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfo()}.
      */
     @Test
     public void testGetOsVersionInfo() {
@@ -154,7 +154,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByDescription() {
@@ -162,7 +162,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByName() {
@@ -170,7 +170,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByArch() {
@@ -178,7 +178,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByMachine() {
@@ -186,7 +186,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByVersion() {
@@ -194,7 +194,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByPatchLevel() {
@@ -202,7 +202,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByVendorVersion() {
@@ -210,7 +210,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByVendorCodeName() {
@@ -218,7 +218,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByDataModel() {
@@ -226,7 +226,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoByCpuEndian() {
@@ -234,7 +234,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getOsVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getOsVersionInfoBy(String)}.
      */
     @Test
     public void testGetOsVersionInfoBy() {
@@ -242,7 +242,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getJavaVersionInfo()}.
+     * Test method for {@link VersionInfoBase#getJavaVersionInfo()}.
      */
     @Test
     public void testGetJavaVersionInfo() {
@@ -250,7 +250,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
      */
     @Test
     public void testGetJavaVersionInfoByVersion() {
@@ -258,7 +258,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
      */
     @Test
     public void testGetJavaVersionInfoByVendor() {
@@ -266,7 +266,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
      */
     @Test
     public void testGetJavaVersionInfoByHome() {
@@ -274,7 +274,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
      */
     @Test
     public void testGetJavaVersionInfoBy() {
@@ -282,7 +282,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfo()}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfo()}.
      */
     @Test
     public void testGetSigarVersionInfo() {
@@ -290,7 +290,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfoBy(String)}.
      */
     @Test
     public void testGetSigarVersionInfoByJavaVersion() {
@@ -298,7 +298,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfoBy(String)}.
      */
     @Test
     public void testGetSigarVersionInfoByNativeVersion() {
@@ -306,7 +306,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfoBy(String)}.
      */
     @Test
     public void testGetSigarVersionInfoByBuildDate() {
@@ -314,7 +314,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfoBy(String)}.
      */
     @Test
     public void testGetSigarVersionInfoByNativeBuildDate() {
@@ -322,7 +322,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfoBy(String)}.
      */
     @Test
     public void testGetSigarVersionInfoByScmVersion() {
@@ -330,7 +330,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfoBy(String)}.
      */
     @Test
     public void testGetSigarVersionInfoByNativeScmVersion() {
@@ -338,7 +338,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfoBy(String)}.
      */
     @Test
     public void testGetSigarVersionInfoByArchlib() {
@@ -346,7 +346,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getSigarVersionInfo()}.
+     * Test method for {@link VersionInfoBase#getSigarVersionInfo()}.
      */
     @Test
     public void testGetSigarVersionInfoBy() {
@@ -354,7 +354,7 @@ public class VersionInfoTest {
     }
 
     /**
-     * Test method for {@link VersionInfo#getVersionInfoObject()}.
+     * Test method for {@link VersionInfoBase#getVersionInfoObject()}.
      */
     @Test
     public void testGetVersionInfoObject() {
