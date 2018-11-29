@@ -1,6 +1,9 @@
 package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 
+import corp.tech.vivek.processmonitor.version_info.VersionInfoBase;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -18,12 +21,17 @@ public class VersionInfoService {
     private HashMap<String, Object> versions = new HashMap<>();
 
     public VersionInfoService() {
-        VersionInfoModel verInfoObj = new VersionInfoModel();
+        // have to use VersionInfoModel. Temporary solution done.
 
-        versions.put("username", verInfoObj.getUsername());
-        versions.put("java-version", verInfoObj.getJavaVersion());
-        versions.put("java-vendor", verInfoObj.getJavaVendor());
-        versions.put("java-home", verInfoObj.getJavaHome());
+        VersionInfoBase versionInfoBase = new VersionInfoBase();
+
+        versions.put("username", versionInfoBase.getUsername());
+        versions.put("host-name", versionInfoBase.getHostName());
+        versions.put("fqdn", versionInfoBase.getFQDN());
+        versions.put("java-version-info", versionInfoBase.getJavaVersionInfo());
+        versions.put("os-version-info", versionInfoBase.getOsVersionInfo());
+        versions.put("sigar-version-info", versionInfoBase.getSigarVersionInfo());
+        versions.put("date-time", new Date());
     }
 
     public HashMap<String, Object> getVersions() {

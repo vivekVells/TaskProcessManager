@@ -1,12 +1,10 @@
 package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.awt.*;
 import java.util.HashMap;
 
 /**
@@ -33,3 +31,41 @@ public class VersionInfoController {
         return versionInfoService.getVersion(id);
     }
 }
+
+/*
+Output:
+On Navigationt to http://localhost:8080/api/versions
+>>>
+{
+  "java-version-info": {
+    "java vm vendor": "Oracle Corporation",
+    "java vm version": "25.144-b01",
+    "java vm home": "C:\\Program Files\\Java\\jdk1.8.0_144\\jre"
+  },
+  "fqdn": "192.168.56.1",
+  "date-time": "2018-11-29T06:30:46.174+0000",
+  "os-version-info": {
+    "os description": "Microsoft \f",
+    "os name": "Win32",
+    "os arch": "x64",
+    "os vendor code name": "unknown",
+    "os machine": "unknown",
+    "os patch level": "unknown",
+    "os data model": "64",
+    "os version": "10.0",
+    "os cpu endian": "little"
+  },
+  "host-name": "kev",
+  "sigar-version-info": {
+    "sigar build date": "04/28/2010 04:26 PM",
+    "sigar native build date": "04/28/2010 04:26 PM",
+    "sigar native version": "1.6.4.128",
+    "sigar scm version": "4b67f57",
+    "sigar archlib": "sigar-amd64-winnt.dll",
+    "sigar native scm version": "4b67f57",
+    "sigar java version": "1.6.4.129"
+  },
+  "username": "Vivek-Pc"
+}
+>>>
+ */

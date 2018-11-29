@@ -1,6 +1,7 @@
 package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * This class designs the database for this application
@@ -10,14 +11,27 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
  */
-@XmlRootElement
+// With this Entity, the Spring boot identifies this class as entity class
+//  and jpa will take care of creating table & row accordingly
+// Basically, JPA can convert this Entity instance would be the row in the database table
+//  Similarly, it converts row in database table into this Entity instance
+@Entity
 public class VersionInfoModel {
     // defining database columns
+    @Id
     private String username;
 
     private String javaVersion;
     private String javaVendor;
     private String javaHome;
+
+    public VersionInfoModel() {
+        this.username = System.getProperty("user.name");
+
+        this.javaVersion = System.getProperty("java.vm.version");
+        this.javaVendor = System.getProperty("java.vm.vendor");
+        this.javaHome = System.getProperty("java.home");
+    }
 
     public String getUsername() {
         return username;
