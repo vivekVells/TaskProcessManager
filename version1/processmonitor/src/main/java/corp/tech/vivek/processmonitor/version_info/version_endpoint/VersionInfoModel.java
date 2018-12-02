@@ -1,6 +1,7 @@
 package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -18,7 +19,8 @@ import javax.persistence.Id;
 @Entity
 public class VersionInfoModel {
     // defining database columns
-    @Id
+    @Id @GeneratedValue
+    private Long id;
     private String username;
 
     private String javaVersion;
@@ -26,11 +28,30 @@ public class VersionInfoModel {
     private String javaHome;
 
     public VersionInfoModel() {
-        this.username = System.getProperty("user.name");
+        super();
+//        this.username = System.getProperty("user.name");
+//
+//        this.javaVersion = System.getProperty("java.vm.version");
+//        this.javaVendor = System.getProperty("java.vm.vendor");
+//        this.javaHome = System.getProperty("java.home");
+    }
 
-        this.javaVersion = System.getProperty("java.vm.version");
-        this.javaVendor = System.getProperty("java.vm.vendor");
-        this.javaHome = System.getProperty("java.home");
+    public VersionInfoModel(Long id, String username, String  javaVersion, String javaVendor, String javaHome) {
+        super();
+
+        this.id = id;
+        this.username = username;
+        this.javaVersion = javaVersion;
+        this.javaVendor = javaVendor;
+        this.javaHome = javaHome;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
