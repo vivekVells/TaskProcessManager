@@ -4,9 +4,12 @@
 package corp.tech.vivek.processmonitor.cpu_info;
 
 import corp.tech.vivek.processmonitor.utility.UtilityPack;
+import io.swagger.models.auth.In;
 import org.hyperic.sigar.cmd.Shell;
 import org.hyperic.sigar.cmd.SigarCommandBase;
 import java.util.HashMap;
+import java.util.Map;
+
 import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.SigarLoader;
 import org.hyperic.sigar.SigarException;
@@ -119,6 +122,38 @@ public class CpuInfoUsageBase extends SigarCommandBase{
         return retrieveCpuPerc(getCpuPercTotalUsageObject());
     }
 
+    // This commented block should be made to access the same cpu total usage percentage object instead of requesting
+    //  new one again and again. this will be done on later commits
+    /*
+    public Integer getTotalCpuIdleTime() throws InterruptedException, SigarException {
+        return (Integer)getTotalCpuUsageInfo().get("idle time");
+    }
+
+    public Integer getTotalCpuWaitTime() throws InterruptedException, SigarException {
+        return (Integer)getTotalCpuUsageInfo().get("wait time");
+    }
+
+    public Integer getTotalUserTime() throws InterruptedException, SigarException {
+        return (Integer)getTotalCpuUsageInfo().get("user time");
+    }
+
+    public Integer getTotalCombinedTime() throws InterruptedException, SigarException {
+        return (Integer)getTotalCpuUsageInfo().get("combined");
+    }
+
+    public Integer getTotalIrqTime() throws InterruptedException, SigarException {
+        return (Integer)getTotalCpuUsageInfo().get("irq time");
+    }
+
+    public Integer getTotalNiceTime() throws InterruptedException, SigarException {
+        return (Integer)getTotalCpuUsageInfo().get("nice time");
+    }
+
+    public Integer getTotalSysTime() throws InterruptedException, SigarException {
+        return (Integer)getTotalCpuUsageInfo().get("sys time");
+    }
+    */
+
     /**
      * CPU related information available in given machine
      *
@@ -137,6 +172,30 @@ public class CpuInfoUsageBase extends SigarCommandBase{
         getCpuMachineInfoMap.put("cores per socket", info.getCoresPerSocket());
 
         return getCpuMachineInfoMap;
+    }
+
+    public String getCpuMachineVendorName() throws SigarException {
+        return String.valueOf(getCpuMachineInfoBy("vendor"));
+    }
+
+    public String getCpuMachineModelName() throws SigarException {
+        return String.valueOf(getCpuMachineInfoBy("model"));
+    }
+
+    public String getCpuMachineOperatingAt() throws SigarException {
+        return String.valueOf(getCpuMachineInfoBy("operating at"));
+    }
+
+    public Integer getCpuMachineTotalCores() throws SigarException {
+        return (Integer)getCpuMachineInfoBy("total cores");
+    }
+
+    public Integer getCpuMachineTotalSockets() throws SigarException {
+        return (Integer) getCpuMachineInfoBy("total sockets");
+    }
+
+    public Integer getCpuMachineCoresPerSocket() throws SigarException {
+        return (Integer)getCpuMachineInfoBy("cores per socket");
     }
 
     /**

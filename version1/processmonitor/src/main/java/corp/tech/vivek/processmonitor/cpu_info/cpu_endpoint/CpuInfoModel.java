@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
+ */
 @Entity
 public class CpuInfoModel {
     @Id
@@ -54,51 +57,51 @@ public class CpuInfoModel {
         this.id = id;
     }
 
-    public String getcpuVendor() {
+    public String getCpuVendor() {
         return cpuVendor;
     }
 
-    public void setcpuVendor(String cpuVendor) {
+    public void setCpuVendor(String cpuVendor) {
         this.cpuVendor = cpuVendor;
     }
 
-    public String getcpuModel() {
+    public String getCpuModel() {
         return cpuModel;
     }
 
-    public void setcpuModel(String cpuModel) {
+    public void setCpuModel(String cpuModel) {
         this.cpuModel = cpuModel;
     }
 
-    public String getcpuOperatingAt() {
+    public String getCpuOperatingAt() {
         return cpuOperatingAt;
     }
 
-    public void setcpuOperatingAt(String cpuOperatingAt) {
+    public void setCpuOperatingAt(String cpuOperatingAt) {
         this.cpuOperatingAt = cpuOperatingAt;
     }
 
-    public Integer getcpuTotalCores() {
+    public Integer getCpuTotalCores() {
         return cpuTotalCores;
     }
 
-    public void setcpuTotalCores(Integer cpuTotalCores) {
+    public void setCpuTotalCores(Integer cpuTotalCores) {
         this.cpuTotalCores = cpuTotalCores;
     }
 
-    public Integer getcpuTotalSockets() {
+    public Integer getCpuTotalSockets() {
         return cpuTotalSockets;
     }
 
-    public void setcpuTotalSockets(Integer cpuTotalSockets) {
+    public void setCpuTotalSockets(Integer cpuTotalSockets) {
         this.cpuTotalSockets = cpuTotalSockets;
     }
 
-    public Integer getcpuCoresPerSocket() {
+    public Integer getCpuCoresPerSocket() {
         return cpuCoresPerSocket;
     }
 
-    public void setcpuCoresPerSocket(Integer cpuCoresPerSocket) {
+    public void setCpuCoresPerSocket(Integer cpuCoresPerSocket) {
         this.cpuCoresPerSocket = cpuCoresPerSocket;
     }
 
