@@ -1,10 +1,13 @@
 package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 
+import corp.tech.vivek.processmonitor.version_info.VersionInfoBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This service class provides every information which then will be used by controller
@@ -25,14 +28,50 @@ public class VersionInfoService {
     public VersionInfoService() {
     }
 
+    private VersionInfoModel pullRequiredVersionInfoData() {
+        VersionInfoModel versionInfoModel = new VersionInfoModel();
+        VersionInfoBase versionInfoBase = new VersionInfoBase();
+
+        versionInfoModel.setUsername(versionInfoBase.getUsername());
+
+        versionInfoModel.setHostName(versionInfoBase.getHostName());
+        versionInfoModel.setFqdn(versionInfoBase.getFQDN());
+
+        versionInfoModel.setJavaVersion(versionInfoBase.getJavaVersion());
+        versionInfoModel.setJavaVendor(versionInfoBase.getJavaVendor());
+        versionInfoModel.setJavaHome(versionInfoBase.getJavaHome());
+
+        versionInfoModel.setSigarBuildDate(versionInfoBase.getSigarBuildDate());
+        versionInfoModel.setSigarNativeBuildDate(versionInfoBase.getSigarNativeBuildDate());
+        versionInfoModel.setSigarNativeVersion(versionInfoBase.getSigarNativeVersion());
+        versionInfoModel.setSigarNativeScmVersion(versionInfoBase.getSigarNativeScmVersion());
+        versionInfoModel.setSigarScmVersion(versionInfoBase.getSigarScmVersion());
+        versionInfoModel.setSigarArchlib(versionInfoBase.getSigarArchlib());
+        versionInfoModel.setSigarJavaVersion(versionInfoBase.getSigarJavaVersion());
+
+        versionInfoModel.setOsDescription(versionInfoBase.getOsDescription());
+        versionInfoModel.setOsName(versionInfoBase.getOsName());
+        versionInfoModel.setOsArch(versionInfoBase.getOsArch());
+        versionInfoModel.setOsVendorCode(versionInfoBase.getOsVendorCodeName());
+        versionInfoModel.setOsMachine(versionInfoBase.getOsMachine());
+        versionInfoModel.setOsPathLevel(versionInfoBase.getOsPatchLevel());
+        versionInfoModel.setOsDataModel(versionInfoBase.getOsDataModel());
+        versionInfoModel.setOsVersion(versionInfoBase.getOsVersion());
+        versionInfoModel.setOsCpuEndian(versionInfoBase.getOsCpuEndian());
+
+        return versionInfoModel;
+    }
+
+    @PostConstruct
+    public void loadData() {
+        versionInfoRepository.save(pullRequiredVersionInfoData());
+    }
+
     public List<VersionInfoModel> getVersions() {
         List<VersionInfoModel> versionsList = new ArrayList<>();
-        VersionInfoModel versionsObj = new VersionInfoModel();
-        versionsObj.setUsername("vivek Vells");
 
-        versionsList.add(versionsObj);
+        versionInfoRepository.findAll().forEach(versions -> versionsList.add(versions));
 
-        //versionInfoRepository.findAll().forEach(versions -> versionsList.add(versions));
         return versionsList;
     }
 

@@ -1,5 +1,7 @@
 package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -28,9 +30,9 @@ public class VersionInfoModel {
     private String sigarBuildDate;
     private String sigarNativeBuildDate;
     private String sigarNativeVersion;
+    private String sigarNativeScmVersion;
     private String sigarScmVersion;
     private String sigarArchlib;
-    private String sigarNativeScmVersion;
     private String sigarJavaVersion;
 
     private String hostName;
@@ -39,21 +41,14 @@ public class VersionInfoModel {
     private String osDescription;
     private String osName;
     private String osArch;
-    private String osVerndorCode;
+    private String osVendorCode;
     private String osMachine;
     private String osPathLevel;
     private String osDataModel;
     private String osVersion;
     private String osCpuEndian;
 
-    public VersionInfoModel() {
-//        super();
-//        this.username = System.getProperty("user.name");
-//
-//        this.javaVersion = System.getProperty("java.vm.version");
-//        this.javaVendor = System.getProperty("java.vm.vendor");
-//        this.javaHome = System.getProperty("java.home");
-    }
+    public VersionInfoModel() { }
 
     public VersionInfoModel(Long id, String username, String  javaVersion, String javaVendor, String javaHome) {
         super();
@@ -79,30 +74,6 @@ public class VersionInfoModel {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getjavaVersion() {
-        return javaVersion;
-    }
-
-    public void setjavaVersion(String javaVersion) {
-        this.javaVersion = javaVersion;
-    }
-
-    public String getjavaVendor() {
-        return javaVendor;
-    }
-
-    public void setjavaVendor(String javaVendor) {
-        this.javaVendor = javaVendor;
-    }
-
-    public String getjavaHome() {
-        return javaHome;
-    }
-
-    public void setjavaHome(String javaHome) {
-        this.javaHome = javaHome;
     }
 
     public String getJavaVersion() {
@@ -153,6 +124,14 @@ public class VersionInfoModel {
         this.sigarNativeVersion = sigarNativeVersion;
     }
 
+    public String getSigarNativeScmVersion() {
+        return sigarNativeScmVersion;
+    }
+
+    public void setSigarNativeScmVersion(String sigarNativeScmVersion) {
+        this.sigarNativeScmVersion = sigarNativeScmVersion;
+    }
+
     public String getSigarScmVersion() {
         return sigarScmVersion;
     }
@@ -167,14 +146,6 @@ public class VersionInfoModel {
 
     public void setSigarArchlib(String sigarArchlib) {
         this.sigarArchlib = sigarArchlib;
-    }
-
-    public String getSigarNativeScmVersion() {
-        return sigarNativeScmVersion;
-    }
-
-    public void setSigarNativeScmVersion(String sigarNativeScmVersion) {
-        this.sigarNativeScmVersion = sigarNativeScmVersion;
     }
 
     public String getSigarJavaVersion() {
@@ -225,12 +196,12 @@ public class VersionInfoModel {
         this.osArch = osArch;
     }
 
-    public String getOsVerndorCode() {
-        return osVerndorCode;
+    public String getOsVendorCode() {
+        return osVendorCode;
     }
 
-    public void setOsVerndorCode(String osVerndorCode) {
-        this.osVerndorCode = osVerndorCode;
+    public void setOsVendorCode(String osVendorCode) {
+        this.osVendorCode = osVendorCode;
     }
 
     public String getOsMachine() {
