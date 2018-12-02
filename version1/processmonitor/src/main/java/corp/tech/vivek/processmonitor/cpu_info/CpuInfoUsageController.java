@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class CpuInfoUsageController {
     @GetMapping("/cpu")
     public Object sGetCpuMachineInfo() throws Exception {
-        CpuInfoUsage cpuObj = new CpuInfoUsage();
+        CpuInfoUsageBase cpuObj = new CpuInfoUsageBase();
         HashMap<String, Object> mappedCpuInfoUsage = new HashMap<>();
 
         mappedCpuInfoUsage.put("Cpu Machine Info", cpuObj.getCpuMachineInfo());

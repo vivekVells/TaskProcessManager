@@ -1,6 +1,6 @@
 package corp.tech.vivek.processmonitor.test;
 
-import corp.tech.vivek.processmonitor.test.cpu_info.CpuInfoUsageTest;
+import corp.tech.vivek.processmonitor.test.cpu_info.CpuInfoUsageBaseTest;
 import corp.tech.vivek.processmonitor.test.utility.UtilityPackTest;
 import corp.tech.vivek.processmonitor.test.version_info.VersionInfoBaseModelTest;
 import corp.tech.vivek.processmonitor.test.welcome.WelcomeTest;
@@ -14,7 +14,7 @@ import org.junit.runners.Suite;
         WelcomeTest.class,
         VersionInfoBaseModelTest.class,
         UtilityPackTest.class,
-        CpuInfoUsageTest.class,
+        CpuInfoUsageBaseTest.class,
 })
 
 /**

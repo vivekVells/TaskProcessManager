@@ -1,6 +1,6 @@
 package corp.tech.vivek.processmonitor.test.cpu_info;
 
-import corp.tech.vivek.processmonitor.cpu_info.CpuInfoUsage;
+import corp.tech.vivek.processmonitor.cpu_info.CpuInfoUsageBase;
 import corp.tech.vivek.processmonitor.utility.UtilityPack;
 import org.hyperic.sigar.CpuInfo;
 import org.hyperic.sigar.CpuPerc;
@@ -15,8 +15,8 @@ import java.util.HashMap;
  *
  * shortNote: 12 tests in 13s 98ms
  */
-public class CpuInfoUsageTest {
-    CpuInfoUsage cpuObj;
+public class CpuInfoUsageBaseTest {
+    CpuInfoUsageBase cpuObj;
     Sigar sigarObj;
     CpuPerc[] cpuPercUsageListObj;
     CpuPerc cpuPercTotalUsageObj;
@@ -34,8 +34,8 @@ public class CpuInfoUsageTest {
     public static void setUpBeforeClass() throws Exception {
         cpuMachineInfoMapTestArg = new HashMap<String, Object>();
         retrieveCpuPercMapTestArg = new HashMap<String, Object>();
-        expectedClassCpuName = new CpuInfoUsage().getClass().getName();
-        actualClassCpuName = new CpuInfoUsage().getCpuInfoUsageObject().getClass().getName();
+        expectedClassCpuName = new CpuInfoUsageBase().getClass().getName();
+        actualClassCpuName = new CpuInfoUsageBase().getCpuInfoUsageObject().getClass().getName();
 
         CpuInfo info = UtilityPack.getSigarObject().getCpuInfoList()[0];
 
@@ -72,7 +72,7 @@ public class CpuInfoUsageTest {
      */
     @Before
     public void setUp() throws Exception {
-        this.cpuObj = new CpuInfoUsage();
+        this.cpuObj = new CpuInfoUsageBase();
         this.sigarObj = new Sigar();
         this.cpuPercUsageListObj = this.sigarObj.getCpuPercList();
         this.cpuPercTotalUsageObj = this.sigarObj.getCpuPerc();
@@ -91,7 +91,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuInfoUsageObject()}.
+     * Test method for {@link CpuInfoUsageBase#getCpuInfoUsageObject()}.
      */
     @Test
     public void testGetCpuInfoUsageObject() {
@@ -99,7 +99,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#retrieveCpuPerc(org.hyperic.sigar.CpuPerc)}.
+     * Test method for {@link CpuInfoUsageBase#retrieveCpuPerc(org.hyperic.sigar.CpuPerc)}.
      * @throws SigarException
      * @throws InterruptedException
      */
@@ -112,7 +112,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuPercUsageListObject()}.
+     * Test method for {@link CpuInfoUsageBase#getCpuPercUsageListObject()}.
      * @throws SigarException
      */
     @Test
@@ -124,7 +124,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuPercTotalUsageObject()}.
+     * Test method for {@link CpuInfoUsageBase#getCpuPercTotalUsageObject()}.
      * @throws SigarException
      */
     @Test
@@ -136,7 +136,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getIndividualCpuUsageInfo()}.
+     * Test method for {@link CpuInfoUsageBase#getIndividualCpuUsageInfo()}.
      * @throws SigarException
      * @throws InterruptedException
      */
@@ -149,7 +149,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getTotalCpuUsageInfo()}.
+     * Test method for {@link CpuInfoUsageBase#getTotalCpuUsageInfo()}.
      * @throws SigarException
      * @throws InterruptedException
      */
@@ -162,7 +162,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfo()}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfo()}.
      * @throws SigarException
      */
     @Test
@@ -174,7 +174,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfoBy(java.lang.String)}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfoBy(java.lang.String)}.
      * @throws SigarException
      */
     @Test
@@ -186,7 +186,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfoBy(java.lang.String)}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfoBy(java.lang.String)}.
      * @throws SigarException
      */
     @Test
@@ -198,7 +198,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfoBy(java.lang.String)}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfoBy(java.lang.String)}.
      * @throws SigarException
      */
     @Test
@@ -210,7 +210,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfoBy(java.lang.String)}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfoBy(java.lang.String)}.
      * @throws SigarException
      */
     @Test
@@ -222,7 +222,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfoBy(java.lang.String)}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfoBy(java.lang.String)}.
      * @throws SigarException
      */
     @Test
@@ -234,7 +234,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfoBy(java.lang.String)}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfoBy(java.lang.String)}.
      * @throws SigarException
      */
     @Test
@@ -246,7 +246,7 @@ public class CpuInfoUsageTest {
     }
 
     /**
-     * Test method for {@link CpuInfoUsage#getCpuMachineInfoBy(java.lang.String)}.
+     * Test method for {@link CpuInfoUsageBase#getCpuMachineInfoBy(java.lang.String)}.
      * @throws SigarException
      */
     @Test
