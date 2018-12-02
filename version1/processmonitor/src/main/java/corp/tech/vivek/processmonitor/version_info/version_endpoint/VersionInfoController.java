@@ -1,11 +1,9 @@
 package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.util.List;
 
 /**
  * This controller class handles all the endpoints & respond accordingly
@@ -22,14 +20,21 @@ public class VersionInfoController {
     private VersionInfoService versionInfoService;
 
     @GetMapping("/api/versions")
-    public HashMap<String, Object> getVersions() {
+    public List<VersionInfoModel> getVersions() {
+        System.out.println("get action done: ");
         return versionInfoService.getVersions();
     }
 
-    @GetMapping("/api/version/{id}")
-    public Object getVersion(@PathVariable String id) {
-        return versionInfoService.getVersion(id);
+    @PostMapping("/api/versions")
+    public void addVersion(@RequestBody VersionInfoModel versions) {
+        System.out.println("post action done... " + versions.getUsername());
+        versionInfoService.addVersions(versions);
     }
+
+//    @GetMapping("/api/version/{id}")
+//    public Object getVersion(@PathVariable String id) {
+//        return versionInfoService.getVersion(id);
+//    }
 }
 
 /*
