@@ -22,6 +22,10 @@ import org.hyperic.sigar.cmd.SigarCommandBase;
  * File reference/headsup notes: TaskProcessManager\resource_house\reference\NotesHub\version1-maven_use-eclipse_processmonitor_ver1-processmonitorver1\thingsToRemember.txt
  */
 public class VersionInfoBase extends SigarCommandBase {
+    private String JAVA_VM_VERSION = "java vm version";
+    private String JAVA_VM_VENODR = "java vm vendor";
+    private String JAVA_VM_HOME = "java vm home";
+
     public VersionInfoBase(Shell shell) { super(shell); }
 
     public VersionInfoBase() { super(); }
@@ -98,6 +102,43 @@ public class VersionInfoBase extends SigarCommandBase {
         return osVersionMap;
     }
 
+    public String getOsDescription() {
+        return String.valueOf(getOsVersionInfoBy("os description"));
+    }
+
+    public String getOsName() {
+        return String.valueOf(getOsVersionInfoBy("os name"));
+    }
+
+    public String getOsMachine() {
+        return String.valueOf(getOsVersionInfoBy("os machine"));
+    }
+
+    public String getOsArch() {
+        return String.valueOf(getOsVersionInfoBy("os arch"));
+    }
+
+    public String getOsVersion() {
+        return String.valueOf(getOsVersionInfoBy("os version"));
+    }
+
+    public String getOsPatchLevel() {
+        return String.valueOf(getOsVersionInfoBy("os patch level"));
+    }
+
+    public String getOsVendorCodeName() {
+        return String.valueOf(getOsVersionInfoBy("os vendor code name"));
+    }
+
+    public String getOsDataModel() {
+        return String.valueOf(getOsVersionInfoBy("os data model"));
+    }
+
+    public String getOsCpuEndian() {
+        return String.valueOf(getOsVersionInfoBy("os cpu endian"));
+    }
+
+
     /**
      * Desired version info of OS - retrievable by keyword string
      *
@@ -115,8 +156,8 @@ public class VersionInfoBase extends SigarCommandBase {
      *
      * @return mapped java version info
      */
-    public HashMap<String, Object> getJavaVersionInfo() {
-        HashMap<String, Object> javaVersionMap = new HashMap<String, Object>();
+    public HashMap<String, Object> getMappedJavaVersionInfo() {
+        HashMap<String, Object> javaVersionMap = new HashMap<>();
 
         javaVersionMap.put("java vm version", getUnkownIfValueNotPresent(System.getProperty("java.vm.version")));
         javaVersionMap.put("java vm vendor", getUnkownIfValueNotPresent(System.getProperty("java.vm.vendor")));
@@ -125,17 +166,30 @@ public class VersionInfoBase extends SigarCommandBase {
         return javaVersionMap;
     }
 
+    public String getJavaVersion() {
+        return String.valueOf(getMappedJavaVersionInfoBy("java vm version"));
+    }
+
+    public String  getJavaVendor() {
+        return String.valueOf(getMappedJavaVersionInfoBy(JAVA_VM_VENODR));
+    }
+
+    public String getJavaHome() {
+        return String.valueOf(getMappedJavaVersionInfoBy(JAVA_VM_HOME));
+    }
+
     /**
      * Desired version info of Java - retrievable by keyword string
      *
      * @param javaArg
      * @return matched key value
      */
-    public Object getJavaVersionInfoBy(String javaArg) {
-        HashMap<String, Object> javaVersionInfoMap = getJavaVersionInfo();
+    public Object getMappedJavaVersionInfoBy(String javaArg) {
+        HashMap<String, Object> javaVersionInfoMap = getMappedJavaVersionInfo();
 
         return javaVersionInfoMap.get(javaArg);
     }
+    
 
     /**
      * Retrieve all desired sigar version info
@@ -154,6 +208,34 @@ public class VersionInfoBase extends SigarCommandBase {
         sigarVersionMap.put("sigar archlib", getUnkownIfValueNotPresent(SigarLoader.getNativeLibraryName()));
 
         return sigarVersionMap;
+    }
+
+    public String getSigarBuildDate() {
+        return String.valueOf(getSigarVersionInfoBy("sigar build date"));
+    }
+
+    public String getSigarNativeBuildDate() {
+        return String.valueOf(getSigarVersionInfoBy("sigar build date"));
+    }
+
+    public String getSigarNativeVersion() {
+        return String.valueOf(getSigarVersionInfoBy("sigar native version"));
+    }
+
+    public String getSigarNativeScmVersion() {
+        return String.valueOf(getSigarVersionInfoBy("sigar native scm version"));
+    }
+
+    public String getSigarScmVersion() {
+        return String.valueOf(getSigarVersionInfoBy("sigar scm version"));
+    }
+
+    public String getSigarArchlib() {
+        return String.valueOf(getSigarVersionInfoBy("sigar archlib"));
+    }
+
+    public String getSigarJavaVersion() {
+        return String.valueOf(getSigarVersionInfoBy("sigar java version"));
     }
 
     /**
@@ -176,5 +258,4 @@ public class VersionInfoBase extends SigarCommandBase {
     public VersionInfoBase getVersionInfoObject() {
         return new VersionInfoBase();
     }
-
 }

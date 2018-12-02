@@ -21,7 +21,7 @@ public class VersionInfoControllerBase {
         HashMap<String, Object> mappedVersionValues = new HashMap<>();
 
         mappedVersionValues.put("host name", verObj.getHostName());
-        mappedVersionValues.put("java version info", verObj.getJavaVersionInfo());
+        mappedVersionValues.put("java version info", verObj.getJavaVersion());
         mappedVersionValues.put("os version info", verObj.getOsVersionInfo());
         mappedVersionValues.put("sigar version info", verObj.getSigarVersionInfo());
         mappedVersionValues.put("fqdn", verObj.getFQDN());

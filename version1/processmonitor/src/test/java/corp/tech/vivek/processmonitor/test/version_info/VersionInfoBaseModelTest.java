@@ -242,43 +242,43 @@ public class VersionInfoBaseModelTest {
     }
 
     /**
-     * Test method for {@link VersionInfoBase#getJavaVersionInfo()}.
+     * Test method for {@link VersionInfoBase#getMappedJavaVersionInfo()}.
      */
     @Test
-    public void testGetJavaVersionInfo() {
-        Assert.assertEquals(expectedJavaVersionInfoMap, verInfoObj.getJavaVersionInfo());
+    public void testgetMappedJavaVersionInfo() {
+        Assert.assertEquals(expectedJavaVersionInfoMap, verInfoObj.getMappedJavaVersionInfo());
     }
 
     /**
-     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getMappedJavaVersionInfoBy(String)}.
      */
     @Test
-    public void testGetJavaVersionInfoByVersion() {
-        Assert.assertEquals(expectedJavaVersionInfoMap.get("java vm version"), verInfoObj.getJavaVersionInfoBy("java vm version"));
+    public void testgetMappedJavaVersionInfoByVersion() {
+        Assert.assertEquals(expectedJavaVersionInfoMap.get("java vm version"), verInfoObj.getMappedJavaVersionInfoBy("java vm version"));
     }
 
     /**
-     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getMappedJavaVersionInfoBy(String)}.
      */
     @Test
-    public void testGetJavaVersionInfoByVendor() {
-        Assert.assertEquals(expectedJavaVersionInfoMap.get("java vm vendor"), verInfoObj.getJavaVersionInfoBy("java vm vendor"));
+    public void testgetMappedJavaVersionInfoByVendor() {
+        Assert.assertEquals(expectedJavaVersionInfoMap.get("java vm vendor"), verInfoObj.getMappedJavaVersionInfoBy("java vm vendor"));
     }
 
     /**
-     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getMappedJavaVersionInfoBy(String)}.
      */
     @Test
-    public void testGetJavaVersionInfoByHome() {
-        Assert.assertEquals(expectedJavaVersionInfoMap.get("java vm home"), verInfoObj.getJavaVersionInfoBy("java vm home"));
+    public void testgetMappedJavaVersionInfoByHome() {
+        Assert.assertEquals(expectedJavaVersionInfoMap.get("java vm home"), verInfoObj.getMappedJavaVersionInfoBy("java vm home"));
     }
 
     /**
-     * Test method for {@link VersionInfoBase#getJavaVersionInfoBy(String)}.
+     * Test method for {@link VersionInfoBase#getMappedJavaVersionInfoBy(String)}.
      */
     @Test
-    public void testGetJavaVersionInfoBy() {
-        Assert.assertEquals(expectedJavaVersionInfoMap, verInfoObj.getJavaVersionInfo());
+    public void testgetMappedJavaVersionInfoBy() {
+        Assert.assertEquals(expectedJavaVersionInfoMap, verInfoObj.getMappedJavaVersionInfo());
     }
 
     /**
