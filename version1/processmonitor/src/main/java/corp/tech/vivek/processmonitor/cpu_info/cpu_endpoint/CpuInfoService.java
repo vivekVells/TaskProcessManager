@@ -55,7 +55,7 @@ public class CpuInfoService {
 
     // this function will be running for every 5 seconds
     @Scheduled(fixedRate = 5000)
-    public void saveDataInLoop() {
+    public void saveScheduledCpuTotalMemoryUsageData() {
         System.out.println("started inserting total cpu memory usage: " + new Date() + cpuInfoRepository.toString());
         CpuInfoModel cpuInfoModel = new CpuInfoModel();
 
