@@ -3,14 +3,14 @@ package corp.tech.vivek.processmonitor.cpu_info.cpu_endpoint;
 import corp.tech.vivek.processmonitor.cpu_info.CpuInfoUsageBase;
 import org.hyperic.sigar.SigarException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
 
 /**
  * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
@@ -53,11 +53,14 @@ public class CpuInfoService {
         return cpuInfoModel;
     }
 
-    @PostConstruct
-    public void loadCpuInfoData() {
+    // this function will be running for every 5 seconds
+    @Scheduled(fixedRate = 5000)
+    public void saveDataInLoop() {
+        System.out.println("started inserting total cpu memory usage: " + new Date() + cpuInfoRepository.toString());
         CpuInfoModel cpuInfoModel = new CpuInfoModel();
 
         cpuInfoRepository.save(pullRequiredCpuDeviceInfoData(cpuInfoModel));
+        System.out.println("completed inserting total cpu memory usage: " + new Date() + cpuInfoRepository.toString());
     }
 
     public List<CpuInfoModel> getCpuDeviceInfo() {
