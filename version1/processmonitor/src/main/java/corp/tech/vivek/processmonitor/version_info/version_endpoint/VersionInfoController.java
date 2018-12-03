@@ -25,6 +25,12 @@ public class VersionInfoController {
         return versionInfoService.getVersions();
     }
 
+    @GetMapping("/api/versions/consume-response")
+    public void getConsumedVersions() {
+        VersionInfoService versionInfoService = new VersionInfoService();
+        versionInfoService.checkConsumedResponse();
+    }
+
     @PostMapping("/api/versions")
     public void addVersion(@RequestBody VersionInfoModel versions) {
         System.out.println("post action done... " + versions.getUsername());

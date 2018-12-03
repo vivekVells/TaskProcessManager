@@ -3,6 +3,7 @@ package corp.tech.vivek.processmonitor.version_info.version_endpoint;
 import corp.tech.vivek.processmonitor.version_info.VersionInfoBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.Map;
  */
 @Service
 public class VersionInfoService {
+    private final static String VERSION_ENDPOINT_GET_ALL_VERSIONS = "http://localhost:8080/api/versions";
 
     @Autowired
     private VersionInfoRepository versionInfoRepository;
@@ -77,6 +79,14 @@ public class VersionInfoService {
 
     public void addVersions(VersionInfoModel versions) {
         versionInfoRepository.save(versions);
+    }
+
+    public void checkConsumedResponse()
+    {
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(VERSION_ENDPOINT_GET_ALL_VERSIONS, String.class);
+
+        System.out.println("API-Response: " + result);
     }
 
 //    public HashMap<String, Object> getVersions() {
