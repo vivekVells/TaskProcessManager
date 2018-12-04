@@ -1,0 +1,31 @@
+<header xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="page-header">
+        <div class="page-header-top">
+            <div class="container">
+                <div class="page-logo">
+                    <a th:href="@{/}">
+                        <img th:src="@{/images/careydevlogosm.png}" alt="logo" style="margin-top:5px"/>
+                    </a>
+                </div>
+                <a href="javascript:;" class="menu-toggler"></a>
+            </div>
+        </div>            
+        <div class="page-header-menu">
+            <div class="container">
+                <div class="hor-menu  ">
+                    <ul class="nav navbar-nav">
+                        <li class="menu-dropdown classic-menu-dropdown">
+                            <!-- update the endpoint page -->
+                            <a href="https://github.com/vivekVells/TaskProcessManager/tree/master/version1/processmonitor/src/main/java/corp/tech/vivek/processmonitor"> Api End Points
+                            </a>
+                        </li>
+                        <li class="menu-dropdown classic-menu-dropdown">
+                            <a th:href="@{/monitor}"> Process Monitor
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+    </div>
+</header>
