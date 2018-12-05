@@ -29,11 +29,11 @@ public class CpuInfoModel {
     private Integer totalCombinedTime;
     private Integer totalIrqTime;
     private Integer totalNiceTime;
-    private Integer totalSysTIme;
+    private Integer totalSysTime;
 
     public CpuInfoModel() { }
 
-    public CpuInfoModel(String cpuVendor, String cpuModel, String cpuOperatingAt, Integer cpuTotalCores, Integer cpuTotalSockets, Integer cpuCoresPerSocket, Integer totalIdleTime, Integer totalWaitTime, Integer totalUserTime, Integer totalCombinedTime, Integer totalIrqTime, Integer totalNiceTime, Integer totalSysTIme) {
+    public CpuInfoModel(String cpuVendor, String cpuModel, String cpuOperatingAt, Integer cpuTotalCores, Integer cpuTotalSockets, Integer cpuCoresPerSocket, Integer totalIdleTime, Integer totalWaitTime, Integer totalUserTime, Integer totalCombinedTime, Integer totalIrqTime, Integer totalNiceTime, Integer totalSysTime) {
         this.cpuVendor = cpuVendor;
         this.cpuModel = cpuModel;
         this.cpuOperatingAt = cpuOperatingAt;
@@ -46,7 +46,7 @@ public class CpuInfoModel {
         this.totalCombinedTime = totalCombinedTime;
         this.totalIrqTime = totalIrqTime;
         this.totalNiceTime = totalNiceTime;
-        this.totalSysTIme = totalSysTIme;
+        this.totalSysTime = totalSysTime;
     }
 
     public Long getId() {
@@ -153,12 +153,12 @@ public class CpuInfoModel {
         this.totalNiceTime = totalNiceTime;
     }
 
-    public Integer getTotalSysTIme() {
-        return totalSysTIme;
+    public Integer getTotalSysTime() {
+        return totalSysTime;
     }
 
-    public void setTotalSysTIme(Integer totalSysTIme) {
-        this.totalSysTIme = totalSysTIme;
+    public void setTotalSysTime(Integer totalSysTime) {
+        this.totalSysTime = totalSysTime;
     }
 
     @Override
@@ -177,7 +177,7 @@ public class CpuInfoModel {
                 ", totalCombinedTime=" + totalCombinedTime +
                 ", totalIrqTime=" + totalIrqTime +
                 ", totalNiceTime=" + totalNiceTime +
-                ", totalSysTIme=" + totalSysTIme +
+                ", totalSysTime=" + totalSysTime +
                 '}';
     }
 }

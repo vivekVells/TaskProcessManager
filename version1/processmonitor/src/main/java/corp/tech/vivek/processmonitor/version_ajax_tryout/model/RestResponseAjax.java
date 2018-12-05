@@ -3,7 +3,7 @@ package corp.tech.vivek.processmonitor.version_ajax_tryout.model;
 /**
  * @author Vivek Vellaiyappan | vivekvellaiyappans@gmail.com
  */
-public class VersionInfoRestResponseAjax {
+public class RestResponseAjax {
     public static final String NOT_FOUND = "Not found";
     public static final String OK = "Ok";
 
