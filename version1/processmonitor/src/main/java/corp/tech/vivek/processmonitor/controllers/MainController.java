@@ -17,4 +17,9 @@ public class MainController {
     public String homePage() {
         return "teststaticwebresponse";
     }
+
+    @GetMapping("/endpoint")
+    public String applicationEndpoints() {
+        return "applicationendpoints";
+    }
 }
