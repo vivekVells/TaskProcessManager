@@ -20,7 +20,7 @@ public class CpuInfoService {
     @Autowired
     CpuInfoRepository cpuInfoRepository;
 
-    public CpuInfoModel pullRequiredCpuDeviceInfoData(CpuInfoModel cpuInfoModel) {
+    public CpuInfoModel pullRequiredCpuRelatedInfoData(CpuInfoModel cpuInfoModel) {
         CpuInfoUsageBase cpuInfoUsageBase = new CpuInfoUsageBase();
 
         // Device info
@@ -45,7 +45,7 @@ public class CpuInfoService {
             cpuInfoModel.setTotalCombinedTime((Integer)mappedTotalCpuInfo.get("combined"));
             cpuInfoModel.setTotalIrqTime((Integer)mappedTotalCpuInfo.get("irq time"));
             cpuInfoModel.setTotalNiceTime((Integer)mappedTotalCpuInfo.get("nice time"));
-            cpuInfoModel.setTotalSysTIme((Integer)mappedTotalCpuInfo.get("sys time"));
+            cpuInfoModel.setTotalSysTime((Integer)mappedTotalCpuInfo.get("sys time"));
         } catch (SigarException | InterruptedException e) {
             e.printStackTrace();
         }
@@ -59,7 +59,7 @@ public class CpuInfoService {
         System.out.println("started inserting total cpu memory usage: " + new Date() + cpuInfoRepository.toString());
         CpuInfoModel cpuInfoModel = new CpuInfoModel();
 
-        cpuInfoRepository.save(pullRequiredCpuDeviceInfoData(cpuInfoModel));
+        cpuInfoRepository.save(pullRequiredCpuRelatedInfoData(cpuInfoModel));
         System.out.println("completed inserting total cpu memory usage: " + new Date() + cpuInfoRepository.toString());
     }
 
@@ -74,5 +74,11 @@ public class CpuInfoService {
         List<CpuInfoModel> cpuInfoModelList = new ArrayList<>();
 
         return cpuInfoModelList;
+    }
+
+    public CpuInfoModel getCpuTotalUsageByID(Long Id) {
+        CpuInfoModel cpuInfoModel = cpuInfoRepository.findById(Id).get();
+
+        return cpuInfoModel;
     }
 }

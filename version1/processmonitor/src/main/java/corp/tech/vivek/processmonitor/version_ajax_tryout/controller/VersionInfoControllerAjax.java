@@ -1,6 +1,6 @@
 package corp.tech.vivek.processmonitor.version_ajax_tryout.controller;
 
-import corp.tech.vivek.processmonitor.version_ajax_tryout.model.VersionInfoRestResponseAjax;
+import corp.tech.vivek.processmonitor.version_ajax_tryout.model.RestResponseAjax;
 import corp.tech.vivek.processmonitor.version_info.version_endpoint.VersionInfoModel;
 import corp.tech.vivek.processmonitor.version_info.version_endpoint.VersionInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +19,10 @@ public class VersionInfoControllerAjax {
     private VersionInfoService versionInfoService;
 
     @GetMapping("/api/ajax/versions")
-    public VersionInfoRestResponseAjax allEmployees() {
+    public RestResponseAjax allEmployees() {
 
         // instantiating the response object
-        VersionInfoRestResponseAjax response = new VersionInfoRestResponseAjax();
+        RestResponseAjax response = new RestResponseAjax();
 
         // retrieve list of versions
         List<VersionInfoModel> allVersions = versionInfoService.getVersions();
@@ -30,12 +30,12 @@ public class VersionInfoControllerAjax {
 
         // make sure we've got versions
         if (currentVersionInfoOfTheSystem != null) {
-            response.setResponseStatus(VersionInfoRestResponseAjax.OK);
+            response.setResponseStatus(RestResponseAjax.OK);
 
             // put the list in the response object
             response.setResponse(currentVersionInfoOfTheSystem);
         } else {
-            response.setResponseStatus(VersionInfoRestResponseAjax.NOT_FOUND);
+            response.setResponseStatus(RestResponseAjax.NOT_FOUND);
             response.setResponse(new ArrayList<VersionInfoModel>());
         }
 

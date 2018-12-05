@@ -81,7 +81,7 @@
                                                 <div class="portlet-title">
                                                     <div class="caption caption-md">
                                                         <i class="icon-globe theme-font hide"></i>
-                                                        <span class="caption-subject font-blue-madison bold uppercase">Profile</span>
+                                                        <span class="caption-subject font-blue-madison bold uppercase">Version Profile</span>
                                                     </div>
                                                 </div>
                                                 <div class="portlet-body">
@@ -162,7 +162,77 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>		                
+                        </div>
+
+                        <!-- CPU Usage related info -->
+                        <div class="row" style="visibility:hidden" id="cpuProfileRow">
+                            <div class="col-md-12">
+                                <div class="profile-sidebar">
+                                    <div class="portlet light profile-sidebar-portlet ">
+                                        <div class="profile-userpic">
+                                            <img th:src="@{/images/darthvader.jpg}" class="img-responsive" alt="" id="cpuInfoModelPic"/>
+                                        </div>
+                                        <div class="profile-usertitle">
+                                            <div class="profile-usertitle-name" id="cpuInfoModelHeaderName"> CPU related Info </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="portlet light ">
+                                                <div class="portlet-title">
+                                                    <div class="caption caption-md">
+                                                        <i class="icon-globe theme-font hide"></i>
+                                                        <span class="caption-subject font-blue-madison bold uppercase">CPU Profile</span>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <form role="form" action="#">
+                                                        <!-- cpu device info -->
+                                                        <div class="form-group">
+                                                            <label class="control-label">Cpu DB ID</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelId"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Vendor</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelVendor"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Model</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelName"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Total Cores</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalCores"/> </div>
+
+                                                        <!-- total cpu usage related info -->
+                                                        <div class="form-group">
+                                                            <label class="control-label">Idle Time</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalIdleTime"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Wait Time</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalWaitTime"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">User Time</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalUserTime"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Combined Time</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalCombinedTime"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Irq Time</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalIrqTime"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Nice Time</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalNiceTime"/> </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Sys Time</label>
+                                                            <input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalSysTime"/> </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
