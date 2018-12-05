@@ -20,6 +20,13 @@
     
     <body class="page-container-bg-solid">
         <div th:include="fragments/topmenuheader :: header"></div>
+        <div class="container theme-showcase" role="main">
+            <div class="" align="center">
+                <h1>Task Process Monitor</h1>
+                <!--<b th:text=“${execInfo.now.time}”>date and time</b>-->
+                <b th:text="${#execInfo.now.time}"></b>
+            </div>
+        </div>
         <div class="page-container">
             <div class="page-content-wrapper">
                 <div class="page-head" style="background-color:#eff3f8;padding-top:40px">
