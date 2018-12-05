@@ -37,7 +37,9 @@ function populateCpuInfo(data) {
         var response = data.response;
 
         // parse received JSON data
-        var cpuInfoModelImage = './images/' + response.imageFile;
+        // var cpuInfoModelImage = './images/' + response.imageFile;
+        // var cpuInfoModelImage = '/images/cpulogo.jpg';
+        // console.log("cpuImage: " + cpuInfoModelImage);
 
         var cpuInfoModelId = response.id;
         var cpuInfoModelVendor = response.cpuVendor;
@@ -53,7 +55,7 @@ function populateCpuInfo(data) {
         var cpuInfoModelTotalSysTime = response.totalSysTime;
 
         // set the version model badge values
-        $('#cpuInfoModelPic').attr("src", cpuInfoModelImage);
+        // $('#cpuInfoModelPic').attr("src", cpuInfoModelImage);
         $('#cpuInfoModelHeaderName').html(cpuInfoModelName);
 
         // set the input field values
@@ -92,7 +94,9 @@ function populateVersionInfo(data) {
         var response = data.response;
 
         // parse received JSON data
-        var versionInfoModelImage = './images/' + response.imageFile;
+        // var versionInfoModelImage = './images/' + response.imageFile;
+        // var versionInfoModelImage = '/images/computerlogo.png';
+        // console.log("cpuImage: " + versionInfoModelImage);
 
         var versionInfoModelId = response.id;
         var versionInfoModelUsername = response.username;
@@ -121,7 +125,7 @@ function populateVersionInfo(data) {
         var versionInfoModelOsCpuEndian = response.osCpuEndian;
 
         // set the version model badge values
-        $('#versionInfoModelPic').attr("src", versionInfoModelImage);
+        // $('#versionInfoModelPic').attr("src", versionInfoModelImage);
         $('#versionInfoModelHeaderName').html(versionInfoModelUsername);
 
         // set the input field values
