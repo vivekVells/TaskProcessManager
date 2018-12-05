@@ -37,7 +37,7 @@
     <script type="text/css" src="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"></script>
 
     <!-- javascript files -->
-    <script type="text/javascript" src="C:/Users/Vivek-Pc/.m2/repository/org/webjars/bootstrap/4.1.2/bootstrap-4.1.2.jar!/META-INF/resources/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
 
     <!-- custom static files referencing -->
@@ -54,8 +54,10 @@
 </head>
 <body>
     <div class="container theme-showcase" role="main">
-        <div class="jumbotron">
+        <div class="jumbotron" align="center">
             <h1>Testing - Web Response - Task Process Manager</h1>
+            <!--<b th:text=“${execInfo.now.time}”>date and time</b>-->
+            <b th:text="${#execInfo.now.time}"></b>
         </div>
     </div>
 
