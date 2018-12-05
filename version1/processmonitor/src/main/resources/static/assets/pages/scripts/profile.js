@@ -36,6 +36,26 @@ function populateVersionInfo(data) {
         var versionInfoModelJavaHome = response.javaHome;
         var versionInfoModelJavaVendor = response.javaVendor;
 
+        var versionInfoModelSigarBuildDate = response.sigarBuildDate;
+        var versionInfoModelSigarNativeBuildDate = response.sigarNativeBuildDate;
+        var versionInfoModelSigarNativeVersion = response.sigarNativeVersion;
+        var versionInfoModelSigarNativeScmVersion = response.sigarNativeScmVersion;
+        var versionInfoModelSigarScmVersion = response.sigarScmVersion;
+        var versionInfoModelSigarArchlib = response.sigarArchlib;
+        var versionInfoModelSigarJavaVersion = response.sigarJavaVersion;
+
+        var versionInfoModelHostName = response.hostName;
+        var versionInfoModelFQDN = response.fqdn;
+
+        var versionInfoModelOsDescription = response.osDescription;
+        var versionInfoModelOsName = response.osName;
+        var versionInfoModelOsArch = response.osArch;
+        var versionInfoModelOsVendorCode = response.osVendorCode;
+        var versionInfoModelOsMachine = response.osMachine;
+        var versionInfoModelOsPathLevel = response.osPatchLevel;
+        var versionInfoModelOsDataModel = response.osDataModel;
+        var versionInfoModelOsCpuEndian = response.osCpuEndian;
+
         // set the version model badge values
         $('#versionInfoModelPic').attr("src", versionInfoModelImage);
         $('#versionInfoModelHeaderName').html(versionInfoModelUsername);
@@ -46,6 +66,26 @@ function populateVersionInfo(data) {
         $('#versionInfoModelJavaVersion').val(versionInfoModelJavaVersion);
         $('#versionInfoModelJavaHome').val(versionInfoModelJavaHome);
         $('#versionInfoModelJavaVendor').val(versionInfoModelJavaVendor);
+
+        $('#versionInfoModelSigarBuildDate').val(versionInfoModelSigarBuildDate);
+        $('#versionInfoModelSigarNativeBuildDate').val(versionInfoModelSigarNativeBuildDate);
+        $('#versionInfoModelSigarNativeVersion').val(versionInfoModelSigarNativeVersion);
+        $('#versionInfoModelSigarNativeScmVersion').val(versionInfoModelSigarNativeScmVersion);
+        $('#versionInfoModelSigarScmVersion').val(versionInfoModelSigarScmVersion);
+        $('#versionInfoModelSigarArchlib').val(versionInfoModelSigarArchlib);
+        $('#versionInfoModelSigarJavaVersion').val(versionInfoModelSigarJavaVersion);
+
+        $('#versionInfoModelHostName').val(versionInfoModelHostName);
+        $('#versionInfoModelFQDN').val(versionInfoModelFQDN);
+
+        $('#versionInfoModelOsDescription').val(versionInfoModelOsDescription);
+        $('#versionInfoModelOsName').val(versionInfoModelOsName);
+        $('#versionInfoModelOsArch').val(versionInfoModelOsArch);
+        $('#versionInfoModelOsVendorCode').val(versionInfoModelOsVendorCode);
+        $('#versionInfoModelOsMachine').val(versionInfoModelOsMachine);
+        $('#versionInfoModelOsPathLevel').val(versionInfoModelOsPathLevel);
+        $('#versionInfoModelOsDataModel').val(versionInfoModelOsDataModel);
+        $('#versionInfoModelOsCpuEndian').val(versionInfoModelOsCpuEndian);
 
         // show the hidden version related elements
         $('#profileRow').css('visibility','visible');
