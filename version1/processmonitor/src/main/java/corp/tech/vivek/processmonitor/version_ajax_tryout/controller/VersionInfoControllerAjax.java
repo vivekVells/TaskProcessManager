@@ -19,7 +19,7 @@ public class VersionInfoControllerAjax {
     private VersionInfoService versionInfoService;
 
     @GetMapping("/api/ajax/versions")
-    public RestResponseAjax allEmployees() {
+    public RestResponseAjax allVersions() {
 
         // instantiating the response object
         RestResponseAjax response = new RestResponseAjax();

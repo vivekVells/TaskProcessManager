@@ -45,6 +45,7 @@ function populateCpuInfo(data) {
         var cpuInfoModelVendor = response.cpuVendor;
         var cpuInfoModelName = response.cpuModel;
         var cpuInfoModelTotalCores = response.cpuTotalCores;
+        var cpuInfoModelOperatingAt = response.cpuOperatingAt;
 
         var cpuInfoModelTotalIdleTime = response.totalIdleTime;
         var cpuInfoModelTotalWaitTime = response.totalWaitTime;
@@ -63,6 +64,7 @@ function populateCpuInfo(data) {
         $('#cpuInfoModelVendor').val(cpuInfoModelVendor);
         $('#cpuInfoModelName').val(cpuInfoModelName);
         $('#cpuInfoModelTotalCores').val(cpuInfoModelTotalCores);
+        $('#cpuInfoModelOperatingAt').val(cpuInfoModelOperatingAt);
 
         $('#cpuInfoModelTotalIdleTime').val(cpuInfoModelTotalIdleTime);
         $('#cpuInfoModelTotalWaitTime').val(cpuInfoModelTotalWaitTime);
