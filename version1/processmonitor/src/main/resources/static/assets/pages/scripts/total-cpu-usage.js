@@ -41,57 +41,59 @@ function populateTotalCpuInfo(data) {
     console.log("populateTotalCpuInfo data: ", data,
         "\npopulateTotalCpuInfo response: ", data.response);
 
-    // var status = data.responseStatus;
-    //
-    // //check the response to make sure it's ok
-    // if (status == "Ok") {
-    //     var response = data.response;
-    //
-    //     // parse received JSON data
-    //     // var cpuInfoModelImage = './images/' + response.imageFile;
-    //     // var cpuInfoModelImage = '/images/cpulogo.jpg';
-    //     // console.log("cpuImage: " + cpuInfoModelImage);
-    //
-    //     var cpuInfoModelId = response.id;
-    //     var cpuInfoModelVendor = response.cpuVendor;
-    //     var cpuInfoModelName = response.cpuModel;
-    //     var cpuInfoModelTotalCores = response.cpuTotalCores;
-    //
-    //     var cpuInfoModelTotalIdleTime = response.totalIdleTime;
-    //     var cpuInfoModelTotalWaitTime = response.totalWaitTime;
-    //     var cpuInfoModelTotalUserTime = response.totalUserTime;
-    //     var cpuInfoModelTotalCombinedTime = response.totalCombinedTime;
-    //     var cpuInfoModelTotalIrqTime = response.totalIrqTime;
-    //     var cpuInfoModelTotalNiceTime = response.totalNiceTime;
-    //     var cpuInfoModelTotalSysTime = response.totalSysTime;
-    //
-    //     // set the version model badge values
-    //     // $('#cpuInfoModelPic').attr("src", cpuInfoModelImage);
-    //     $('#cpuInfoModelHeaderName').html(cpuInfoModelName);
-    //
-    //     // set the input field values
-    //     $('#cpuInfoModelId').val(cpuInfoModelId);
-    //     $('#cpuInfoModelVendor').val(cpuInfoModelVendor);
-    //     $('#cpuInfoModelName').val(cpuInfoModelName);
-    //     $('#cpuInfoModelTotalCores').val(cpuInfoModelTotalCores);
-    //
-    //     $('#cpuInfoModelTotalIdleTime').val(cpuInfoModelTotalIdleTime);
-    //     $('#cpuInfoModelTotalWaitTime').val(cpuInfoModelTotalWaitTime);
-    //     $('#cpuInfoModelTotalUserTime').val(cpuInfoModelTotalUserTime);
-    //     $('#cpuInfoModelTotalCombinedTime').val(cpuInfoModelTotalCombinedTime);
-    //     $('#cpuInfoModelTotalIrqTime').val(cpuInfoModelTotalIrqTime);
-    //     $('#cpuInfoModelTotalNiceTime').val(cpuInfoModelTotalNiceTime);
-    //     $('#cpuInfoModelTotalSysTime').val(cpuInfoModelTotalSysTime);
-    //
-    //     // hide other ones
-    //     $('#profileRow').css('visibility','none');
-    //
-    //     // show the hidden version related elements
-    //     $('#cpuProfileRow').css('visibility','visible');
-    //
-    // }
-    //
-    // // hide the ajax loader spinner
+    var status = data.responseStatus;
+
+    //check the response to make sure it's ok
+    if (status == "Ok") {
+        var response = data.response;
+
+        // parse received JSON data
+        // var cpuInfoModelImage = './images/' + response.imageFile;
+        // var cpuInfoModelImage = '/images/cpulogo.jpg';
+        // console.log("cpuImage: " + cpuInfoModelImage);
+
+        var cpuInfoModelId = response.id;
+        var cpuInfoModelVendor = response.cpuVendor;
+        var cpuInfoModelName = response.cpuModel;
+        var cpuInfoModelTotalCores = response.cpuTotalCores;
+        var cpuInfoModelOperatingAt = response.cpuOperatingAt;
+
+        var cpuInfoModelTotalIdleTime = response.totalIdleTime;
+        var cpuInfoModelTotalWaitTime = response.totalWaitTime;
+        var cpuInfoModelTotalUserTime = response.totalUserTime;
+        var cpuInfoModelTotalCombinedTime = response.totalCombinedTime;
+        var cpuInfoModelTotalIrqTime = response.totalIrqTime;
+        var cpuInfoModelTotalNiceTime = response.totalNiceTime;
+        var cpuInfoModelTotalSysTime = response.totalSysTime;
+
+        // set the version model badge values
+        // $('#cpuInfoModelPic').attr("src", cpuInfoModelImage);
+        $('#cpuInfoModelHeaderName').html(cpuInfoModelName);
+
+        // set the input field values
+        $('#cpuInfoModelId').val(cpuInfoModelId);
+        $('#cpuInfoModelVendor').val(cpuInfoModelVendor);
+        $('#cpuInfoModelName').val(cpuInfoModelName);
+        $('#cpuInfoModelTotalCores').val(cpuInfoModelTotalCores);
+        $('#cpuInfoModelOperatingAt').val(cpuInfoModelOperatingAt);
+
+        $('#cpuInfoModelTotalIdleTime').val(cpuInfoModelTotalIdleTime);
+        $('#cpuInfoModelTotalWaitTime').val(cpuInfoModelTotalWaitTime);
+        $('#cpuInfoModelTotalUserTime').val(cpuInfoModelTotalUserTime);
+        $('#cpuInfoModelTotalCombinedTime').val(cpuInfoModelTotalCombinedTime);
+        $('#cpuInfoModelTotalIrqTime').val(cpuInfoModelTotalIrqTime);
+        $('#cpuInfoModelTotalNiceTime').val(cpuInfoModelTotalNiceTime);
+        $('#cpuInfoModelTotalSysTime').val(cpuInfoModelTotalSysTime);
+
+        // hide other ones
+        // $('#profileRow').css('visibility','none');
+
+        // show the hidden version related elements
+        // $('#cpuProfileRow').css('visibility','visible');
+
+    }
+
+    // hide the ajax loader spinner
     // $('#ajaxLoader').hide();
 }
 

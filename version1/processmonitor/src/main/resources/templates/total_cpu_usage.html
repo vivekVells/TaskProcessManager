@@ -29,23 +29,23 @@
     -->
 
     <!-- cdn referecing -->
-    <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"></script>
-    -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- load the following in order jquery, popper and lastly bootstrap -->
-    <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- webjar referencing -->
-    <!-- css files -->
-    <script type="text/css" src="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- javascript files -->
-    <script type="text/javascript" src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+    <!--&lt;!&ndash; webjar referencing &ndash;&gt;-->
+    <!--&lt;!&ndash; javascript files &ndash;&gt;-->
+    <!--&lt;!&ndash;  If Jquery doesn't win the loading race, Boostrap will defect. Use defer instead of async and load Jquery first : &ndash;&gt;-->
+    <!--<script defer type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>-->
+    <!--<script defer type="text/javascript" src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>-->
+
+    <!--&lt;!&ndash; css files &ndash;&gt;-->
+    <!--<script type="text/css" src="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"></script>-->
 
     <!-- custom static files referencing -->
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
@@ -73,6 +73,182 @@
         <b th:text="${#execInfo.now.time}"></b>
     </div>
 </div>
+
+<div class="">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Operating At (Mhz)</th>
+            <th scope="col">Total Cores</th>
+            <th scope="col">Vendor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelName"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelOperatingAt"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelTotalCores"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelVendor"/>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+        <tr align="center">
+            <th scope="col">CPU DB ID</th>
+            <th scope="col">Idle Time</th>
+            <th scope="col">Combined Time</th>
+            <th scope="col">User Time</th>
+            <th scope="col">Irq Time</th>
+            <th scope="col">Nice Time</th>
+            <th scope="col">Sys Time</th>
+            <th scope="col">Wait Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelId"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelTotalIdleTime"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelTotalCombinedTime"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelTotalUserTime"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelTotalIrqTime"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelTotalNiceTime"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelTotalSysTime"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" disabled="true" id="cpuInfoModelTotalWaitTime"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" id="cpuInfoModelId2">2nd entries</th>
+            <td id="cpuInfoModelTotalIdleTime2"></td>
+            <td id="cpuInfoModelTotalCombinedTime2"></td>
+            <td id="cpuInfoModelTotalUserTime2"></td>
+            <td id="cpuInfoModelTotalIrqTime2"></td>
+            <td id="cpuInfoModelTotalNiceTime2"></td>
+            <td id="cpuInfoModelTotalSysTime2"></td>
+            <td id="cpuInfoModelTotalWaitTime2"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+
+<!--<div class="row" style="" id="cpuProfileRow">-->
+    <!--<div class="col-sm-3">-->
+        <!--<div class="profile-sidebar">-->
+            <!--<div class="portlet light profile-sidebar-portlet ">-->
+                <!--<div class="profile-userpic">-->
+                    <!--&lt;!&ndash;<img th:src="@{/images/darthvader.jpg}" class="img-responsive" alt="" id="cpuInfoModelPic"/>&ndash;&gt;-->
+                    <!--<img th:src="@{/assets/images/computerlogo.png}" class="img-responsive" alt="CPU LOGO" height="50" width="50" id=""/>-->
+                <!--</div>-->
+                <!--<div class="profile-usertitle">-->
+                    <!--<div class="profile-usertitle-name" id="cpuInfoModelHeaderName"> CPU related Info </div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="profile-content">-->
+            <!--<div class="row">-->
+                <!--<div class="">-->
+                    <!--<div class="portlet light ">-->
+                        <!--<div class="portlet-title">-->
+                            <!--<div class="caption caption-md">-->
+                                <!--<i class="icon-globe theme-font hide"></i>-->
+                                <!--<span class="caption-subject font-blue-madison bold uppercase">CPU Profile</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="portlet-body">-->
+                            <!--<form role="form" action="#">-->
+                                <!--&lt;!&ndash; cpu device info &ndash;&gt;-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Cpu DB ID</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelId"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Vendor</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelVendor"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Model</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelName"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Total Cores</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalCores"/> </div>-->
+
+                                <!--&lt;!&ndash; total cpu usage related info &ndash;&gt;-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Idle Time</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalIdleTime"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Wait Time</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalWaitTime"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">User Time</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalUserTime"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Combined Time</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalCombinedTime"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Irq Time</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalIrqTime"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Nice Time</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalNiceTime"/> </div>-->
+                                <!--<div class="form-group">-->
+                                    <!--<label class="control-label">Sys Time</label>-->
+                                    <!--<input type="text" class="form-control" disabled="true" id="cpuInfoModelTotalSysTime"/> </div>-->
+                            <!--</form>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="container">
     <div class="container theme-showcase" role="main">
