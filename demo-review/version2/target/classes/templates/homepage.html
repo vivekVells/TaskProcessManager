@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description" content="Home Page of this application">
+    <meta name="author" content="Vivek Vellaiyappan">
+    <meta name="contact" content="vivekvellaiyappans@gmail.com">
+
+    <title>Home Page</title>
+
+    <!-- loading static files -->
+
+    <!-- locally referencing -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+        <script type="text/javascript" src="/js/custom.js"></script>
+        -->
+
+    <!-- cdn referecing -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- webjar referencing -->
+    <!--&lt;!&ndash; css files &ndash;&gt;-->
+    <!--<script type="text/css" src="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"></script>-->
+
+    <!--&lt;!&ndash; javascript files &ndash;&gt;-->
+    <!--<script type="text/javascript" src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>-->
+    <!--<script type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>-->
+
+    <!-- custom static files referencing -->
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+    <script type="text/javascript" src="/js/custom.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn-button2").click(function () {
+                alert("Button 2 clicked!!!");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron" align="center">
+            <h1>Task Process Monitor Home Page - Tryout One</h1>
+            <!--<b th:text=“${execInfo.now.time}”>date and time</b>-->
+            <b th:text="${#execInfo.now.time}"></b>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container theme-showcase" role="main">
+            <br> <br>
+            <h1 class="display-4">Static Web Page Response - Testing</h1>
+            <br>
+            <button type="button" class="btn btn-primary" id="btn-version-info" onclick="verInfoShow()">Click To View Version Info</button>
+            <button type="button" class="btn btn-primary" id="btn-button2">Button 2 using cdn</button>
+        </div>
+    </div>
+</body>
+</html>

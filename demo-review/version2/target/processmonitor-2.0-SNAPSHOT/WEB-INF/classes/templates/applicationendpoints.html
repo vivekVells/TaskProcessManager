@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description" content="Application Endpoints that contains all possible endpoints">
+    <meta name="author" content="Vivek Vellaiyappan">
+    <meta name="contact" content="vivekvellaiyappans@gmail.com">
+
+    <title>Application End Point</title>
+
+    <!-- loading static files -->
+
+    <!-- locally referencing -->
+    <!--
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+    <script type="text/javascript" src="/js/custom.js"></script>
+    -->
+
+    <!-- cdn referecing -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- webjar referencing -->
+    <!--&lt;!&ndash; css files &ndash;&gt;-->
+    <!--<script type="text/css" src="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"></script>-->
+
+    <!--&lt;!&ndash; javascript files &ndash;&gt;-->
+    <!--<script type="text/javascript" src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>-->
+    <!--<script type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>-->
+
+    <!-- custom static files referencing -->
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+    <script type="text/javascript" src="/js/custom.js"></script>
+
+</head>
+<body>
+<div class="container theme-showcase" role="main">
+    <div class="jumbotron" align="center">
+        <h1>Application End Point</h1>
+        <!--<b th:text=“${execInfo.now.time}”>date and time</b>-->
+        <b th:text="${#execInfo.now.time}"></b>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container theme-showcase" role="main">
+        <b>Main Controller</b>
+        <br>
+        <ol>
+            <li>http://localhost:8080</li>
+            <li>http://localhost:8080/testresponse</li>
+            <li>http://localhost:8080/endpoint</li>
+            <!-- Ajax Controller -->
+            <li>http://localhost:8080/monitor</li>
+        </ol>
+        <br>
+
+        <b>Utility Controller</b>
+        <br>
+        <ol>
+            <li>http://localhost:8080/utility</li>
+        </ol>
+        <br>
+
+        <b>Version Info Base Controller</b>
+        <br>
+        <ol>
+            <li>http://localhost:8080/version</li>
+        </ol>
+        <br>
+
+        <b>Version Info Base Controller</b>
+        <br>
+        <ol>
+            <li>http://localhost:8080/version</li>
+        </ol>
+        <br>
+
+        <b>API Endpoint Controllers</b>
+        <br>
+        <ol>
+            <li>http://localhost:8080/api/ajax/versions</li>
+            <li>http://localhost:8080/api/ajax/versions/consume-response - (ignore the UI response)</li>
+            <li>http://localhost:8080/api/cpus/device-info</li>
+            <li>http://localhost:8080/api/cpus/memory-usage</li>
+            <li>http://localhost:8080/api/versions</li>
+            <li>http://localhost:8080/api/versions/consume-response - (ignore the UI response)</li>
+        </ol>
+        <br>
+    </div>
+</div>
+<br>
+ALL links in random order:
+<div>
+    <div class="container">
+        <a href="http://localhost:8080/v2/api-docs">http://localhost:8080/v2/api-docs</a>
+        <a href="http://localhost:8080/Swagger-ui.html">http://localhost:8080/Swagger-ui.html</a>
+        <a href="AjaxController">AjaxController</a>
+        <a href="http://localhost:8080/monitor">http://localhost:8080/monitor</a>
+        <a href="CpuInfoController">CpuInfoController</a>
+        <a href="http://localhost:8080/api/cpus/device-info">http://localhost:8080/api/cpus/device-info</a>
+        <a href="http://localhost:8080/api/cpus/memory-usage">http://localhost:8080/api/cpus/memory-usage</a>
+        <a href="CpuInfoControllerAjax">CpuInfoControllerAjax</a>
+        <a href="http://localhost:8080/api/ajax/cpus">http://localhost:8080/api/ajax/cpus</a>
+        <a href="http://localhost:8080/api/ajax/cpus/{id}">http://localhost:8080/api/ajax/cpus/{id}</a>
+        <a href="CpuInfoUsageAutoRefreshController">CpuInfoUsageAutoRefreshController</a>
+        <a href="http://localhost:8080/api/ajax/cpus/totalusage">http://localhost:8080/api/ajax/cpus/totalusage</a>
+        <a href="CpuInfoUsageController">CpuInfoUsageController</a>
+        <a href="http://localhost:8080/cpu">http://localhost:8080/cpu</a>
+        <a href="MainController">MainController</a>
+        <a href="http://localhost:8080/">http://localhost:8080/</a>
+        <a href="http://localhost:8080/endpoint">http://localhost:8080/endpoint</a>
+        <a href="http://localhost:8080/testresponse">http://localhost:8080/testresponse</a>
+        <a href="UtilityController">UtilityController</a>
+        <a href="http://localhost:8080/utility">http://localhost:8080/utility</a>
+        <a href="VersionInfoController">VersionInfoController</a>
+        <a href="http://localhost:8080/api/versions">http://localhost:8080/api/versions</a>
+        <a href="http://localhost:8080/api/versions/consume-response">http://localhost:8080/api/versions/consume-response</a>
+        <a href="VersionInfoControllerAjax">VersionInfoControllerAjax</a>
+        <a href="http://localhost:8080/api/ajax/versions">http://localhost:8080/api/ajax/versions</a>
+        <a href="http://localhost:8080/api/ajax/versions/consume-response">http://localhost:8080/api/ajax/versions/consume-response</a>
+        <a href="VersionInfoControllerBase">VersionInfoControllerBase</a>
+        <a href="http://localhost:8080/version">http://localhost:8080/version</a>
+        <a href="Welcome">Welcome</a>
+        <a href="http://localhost:8080/welcome">http://localhost:8080/welcome</a>
+    </div>
+</div>
+</body>
+</html>

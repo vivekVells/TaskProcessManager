@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <meta name="description" content="Total Cpu Page display in real time using this application">
+    <meta name="author" content="Vivek Vellaiyappan">
+    <meta name="contact" content="vivekvellaiyappans@gmail.com">
+
+    <title>Total Cpu Usage</title>
+
+    <style type="text/css">
+        body {
+            background-image:
+                    url('https://cdn.crunchify.com/wp-content/uploads/2013/03/Crunchify.bg_.300.png');
+        }
+    </style>
+
+    <!-- loading static files -->
+
+    <!-- locally referencing -->
+    <!--
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+    <script type="text/javascript" src="/js/custom.js"></script>
+    -->
+
+    <!-- cdn referecing -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--&lt;!&ndash; webjar referencing &ndash;&gt;-->
+    <!--&lt;!&ndash; javascript files &ndash;&gt;-->
+    <!--&lt;!&ndash;  If Jquery doesn't win the loading race, Boostrap will defect. Use defer instead of async and load Jquery first : &ndash;&gt;-->
+    <!--<script defer type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>-->
+    <!--<script defer type="text/javascript" src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>-->
+
+    <!--&lt;!&ndash; css files &ndash;&gt;-->
+    <!--<script type="text/css" src="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"></script>-->
+
+    <!-- custom static files referencing -->
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+    <script type="text/javascript" src="/js/custom.js"></script>
+
+    <script>
+        // $(document).ready(
+        //     function() {
+        //         setInterval(function() {
+        //             var randomnumber = Math.floor(Math.random() * 100);
+        //
+        //             $('#show').ajax()
+        //
+        //             // $('#show').text(
+        //             //     'I am getting refreshed every 3 seconds..! Random Number ==> '
+        //             //     + randomnumber);
+        //         }, 3000);
+        //     });
+    </script>
+</head>
+<body>
+<div class="container theme-showcase" role="main">
+    <div class="jumbotron" align="center">
+        <h1>Total CPU Usage</h1>
+        <b th:text="${#execInfo.now.time}"></b>
+    </div>
+</div>
+
+<div class="">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Operating At (Mhz)</th>
+            <th scope="col">Total Cores</th>
+            <th scope="col">Vendor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelName1"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelOperatingAt1"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelTotalCores1"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <input type="text" style='width:100%' disabled="true" id="cpuInfoModelVendor1"/>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+        <tr align="center">
+            <th scope="col">CPU DB ID</th>
+            <th scope="col">Idle Time</th>
+            <th scope="col">Combined Time</th>
+            <th scope="col">User Time</th>
+            <th scope="col">Irq Time</th>
+            <th scope="col">Nice Time</th>
+            <th scope="col">Sys Time</th>
+            <th scope="col">Wait Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 1rd row -->
+        <tr>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelId1"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalIdleTime1"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalCombinedTime1"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalUserTime1"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalIrqTime1"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalNiceTime1"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalSysTime1"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalWaitTime1"/>
+            </div> </td>
+        </tr>
+
+        <!-- 2nd row -->
+        <tr>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelId2"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalIdleTime2"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalCombinedTime2"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalUserTime2"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalIrqTime2"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalNiceTime2"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalSysTime2"/>
+            </div> </td>
+            <td> <div>
+                <input type="text" disabled="true" id="cpuInfoModelTotalWaitTime2"/>
+            </div> </td>
+        </tr>
+
+    <!-- 3rd row -->
+    <tr>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelId3"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalIdleTime3"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalCombinedTime3"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalUserTime3"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalIrqTime3"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalNiceTime3"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalSysTime3"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalWaitTime3"/>
+        </div> </td>
+    </tr>
+
+    <!-- 4rd row -->
+    <tr>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelId4"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalIdleTime4"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalCombinedTime4"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalUserTime4"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalIrqTime4"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalNiceTime4"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalSysTime4"/>
+        </div> </td>
+        <td> <div>
+            <input type="text" disabled="true" id="cpuInfoModelTotalWaitTime4"/>
+        </div> </td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<script th:src="@{/assets/pages/scripts/total-cpu-usage.js}" type="text/javascript"></script>
+</body>
+</html>
