@@ -1,4 +1,4 @@
-var globalRequestSendInterval = 5000;
+var globalRequestSendInterval = 3000;
 
 $(document).ready(
     function() {

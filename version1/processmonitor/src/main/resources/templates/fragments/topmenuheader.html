@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="page-logo">
                     <a th:href="@{/}">
-                        <img th:src="@{/images/careydevlogosm.png}" alt="logo" style="margin-top:5px"/>
+                        <img th:src="@{/assets/images/}" width="" height="" alt="logo" style="margin-top:5px"/>
                     </a>
                 </div>
                 <a href="javascript:;" class="menu-toggler"></a>
@@ -15,12 +15,15 @@
                 <div class="hor-menu  ">
                     <ul class="nav navbar-nav">
                         <li class="menu-dropdown classic-menu-dropdown">
-                            <!-- update the endpoint page -->
                             <a href="http://localhost:8080/endpoint"> Api End Points
                             </a>
                         </li>
                         <li class="menu-dropdown classic-menu-dropdown">
-                            <a th:href="@{/monitor}"> Process Monitor
+                            <a href="http://localhost:8080/api/ajax/cpus/totalusage"> CPU Total Usage
+                            </a>
+                        </li>
+                        <li class="menu-dropdown classic-menu-dropdown">
+                            <a th:href="@{/monitor}"> Process Monitor Home Page
                             </a>
                         </li>
                     </ul>
