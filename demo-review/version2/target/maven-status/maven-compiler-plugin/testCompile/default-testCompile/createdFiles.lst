@@ -1,0 +1,6 @@
+corp\tech\vivek\processmonitor\test\cpu_info\CpuInfoUsageBaseTest.class
+corp\tech\vivek\processmonitor\test\utility\UtilityPackTest.class
+corp\tech\vivek\processmonitor\test\version_info\VersionInfoBaseModelTest.class
+corp\tech\vivek\processmonitor\ProcessmonitorApplicationTests.class
+corp\tech\vivek\processmonitor\test\MainTestSuite.class
+corp\tech\vivek\processmonitor\test\welcome\WelcomeTest.class

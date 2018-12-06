@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: corp.tech.vivek.processmonitor.test.version_info.VersionInfoBaseModelTest
+-------------------------------------------------------------------------------
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.988 s - in corp.tech.vivek.processmonitor.test.version_info.VersionInfoBaseModelTest
