@@ -5,6 +5,9 @@
 ### Objective
 - To implement the classic task manager application.  It must contain the following components: metrics collection, database storage, and a user interface.
 
+### Tech Stack 
+- Java, Sigar, Spring Boot, Spring, Spring MVC, Spring Rest Controller, Spring Data JPA, Hibernate, Spring Scheduler, H2 - Database, Junit, HTML, CSS, JavaScript, jQuery, Bootstrap, Github, CI/CD pipeline - Semaphore, Docker, Maven, Swagger, Webjarjs, Log4j
+
 #### Note: Will be updating this read me document - what's completed for this project, demo video and instrutions to run this in your windows machine. Kindly refer Screenshots mentioned below for now.
 
 ### Demo - Version 2.0 Project Images
@@ -30,9 +33,6 @@
 - [Video Link](to be updated)
 - [Working Demo - PDF sheet](to be updated)
 - [Working Functionality Pictures Demo](https://github.com/vivekVells/TaskProcessManager#application-screenshots-so-farwanna-avoid-scrolling-a-lot-use-above-pdf-sheet)
-
-### Tech Usage Info 
-- Version 1: Java, Spring Boot, Maven, GitHub, Semaphore CI, Apache Derby, Sigar, Log4j
 
 ### Features
 - View System Level info (aimed as of now)
