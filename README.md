@@ -5,6 +5,27 @@
 ### Objective
 - To implement the classic task manager application.  It must contain the following components: metrics collection, database storage, and a user interface.
 
+#### Note: Will be updating this read me document - what's completed for this project, demo video and instrutions to run this in your windows machine. Kindly refer Screenshots mentioned below for now.
+
+### Demo - Version 2.0 Project Images
+**Project Demo Presentation slides pdf** - will be inserting few more slides. Link: [Click Me](https://drive.google.com/open?id=1-Q7_c6f8cjn-SFLiUFJT4uNpP5ndBizl)
+
+**Project Home page** 
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Process%20Monitor%20home%20page.PNG)
+**Project Home Page - verison & a single total cpu memory usage values**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Process%20Monitor%20Home%20Page%20-%20Version%20%26%20Single%20CPU%20usage%20info.png)
+**Total CPU memory usage** - The values gets updated in real time
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Total%20CPU%20Memory%20Usage.PNG)
+**Maven Build System - Build success**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/maven%20build%20output.PNG)
+**Semaphore CI - Project Build Status**
+- Tag on repo
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Build%20passed%20snippet.PNG)
+**Semaphore CI - Home Page **
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Semphore%20home%20page%20of%20this%20appln.PNG)
+**Docerized Application**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Dockerized%20the%20application.PNG)
+
 ### Project Working Demo (all demo files location: [link](https://github.com/vivekVells/TaskProcessManager/tree/master/demo-review))
 - [Video Link](to be updated)
 - [Working Demo - PDF sheet](to be updated)
