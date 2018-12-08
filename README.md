@@ -1,14 +1,34 @@
-# Task Process Manager / ProcessOnitor / ProcesSanager
+**View all of my Projectworks - click over here -> [Vivek Vellaiyappan Project Works](https://github.com/vivekVells/VivekVellaiyappanProjectWorks)**
+
+# Task Process Monitor / ProcessOnitor / ProcesSanager
 
 [![Build Status](https://semaphoreci.com/api/v1/projects/3bb1fbdb-6c1a-4804-ad37-36a86bc09d46/2305464/badge.svg)](https://semaphoreci.com/kevshali/taskprocessmanager)
 
 ### Objective
 - To implement the classic task manager application.  It must contain the following components: metrics collection, database storage, and a user interface.
 
+### Team Info & Roles Executed for this project
+|        Name        |                                   Roles                                  |         Shared Roles         |
+|:------------------:|:------------------------------------------------------------------------:|:----------------------------:|
+| Vivek Vellaiyappan | Scrum Master, Manager, Software Engineer, Web Developer, DevOps Engineer | Architect, Technical Writer |
+| Deeksha            | Testing Engineer,  Automation Engineer                                   | Architect, Technical Writer  |
+| Neha               | Testing Engineer,  Automation Engineer                                   | Architect, Technical Writer  |
+
 ### Tech Stack 
 - Java, Sigar, Spring Boot, Spring, Spring MVC, Spring Rest Controller, Spring Data JPA, Hibernate, Spring Scheduler, H2 - Database, Junit, HTML, CSS, JavaScript, jQuery, Bootstrap, Github, CI/CD pipeline - Semaphore, Docker, Maven, Swagger, Webjarjs, Log4j
+### Project Highlights
+|              |                      |                                  |                    |                           |
+|--------------|----------------------|----------------------------------|--------------------|---------------------------|
+| SDLC Process | Agile                | Architectural Decisions          | GitHub             | Maven                     |
+| CI:Semaphore | CD: Docker container | Deployment: Heroku (in Progress) | REST API endpoints | Swagger API documentation |
 
-#### Note: Will be updating this read me document - what's completed for this project, demo video and instrutions to run this in your windows machine. Kindly refer Screenshots mentioned below for now.
+### Future Plans/Enhancements
+|                                                                                                                                                    |                                                            |                                                                               |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------------------------|
+| Cloud Deployment  - Scaling up & delivery of this web Application to everyone by using Cloud CSPs                                                  | Exploring Microservices architecture  for this application | Developer Portal Website to expose the application API to external developers |
+| Code Development Practice Related   - Hot Deploy concept in concept tryout   - Issues creation & assigning gently   automatically when buildfails  | Using Frontend Framework                                   | Implementing Adobe Analytics or such data analysis over application           |
+
+#### Note: Will be updating this read me document more about the instrutions to run this in your windows machine, few more demo info & few more info. Kindly refer Gifs, pdfs, & Screenshots mentioned below for now - Version 2.0.
 
 ### Demo - Version 2.0 Project Images
 **Project Demo Presentation slides pdf** - will be inserting few more slides. Link: [Click Me](https://drive.google.com/open?id=1-Q7_c6f8cjn-SFLiUFJT4uNpP5ndBizl)
@@ -82,6 +102,7 @@ https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version
 ### Application Screenshots So Far(wanna avoid scrolling a lot, use above pdf sheet)
 Beware of the lots of scrolling to come :P
 
+## OLD Screenshots - Version 1.0
 ### Ver 1.1 Screenshots accordingly
 #### Collage - Screen: Welcome, Version Info, CPU Usage info, Utility Info
 ![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version1/spring-boot/collaged%20screens%20of%20welcome%20-%20cpu%20-%20version%20-%20utility.PNG)
