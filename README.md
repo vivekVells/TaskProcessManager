@@ -15,7 +15,7 @@
 | Neha               | Testing Engineer,  Automation Engineer                                   | Architect, Technical Writer  |
 
 ### Tech Stack 
-- Java, Sigar, Spring Boot, Spring, Spring MVC, Spring Rest Controller, Spring Data JPA, Hibernate, Spring Scheduler, H2 - Database, Junit, HTML, CSS, JavaScript, jQuery, Bootstrap, Github, CI/CD pipeline - Semaphore, Docker, Maven, Swagger, Webjarjs, Log4j
+- Java, Sigar API (to get system level info), Spring Boot, Spring, Spring MVC, Spring Rest Controller, Spring Data JPA, Hibernate, Spring Scheduler, H2 - Database, Junit, HTML, CSS, JavaScript, jQuery, Bootstrap, Github, CI/CD pipeline - Semaphore, Docker, Maven, Swagger, Webjarjs, Log4j, Postman (API testing & actions)
 ### Project Highlights
 |              |                      |                                  |                    |                           |
 |--------------|----------------------|----------------------------------|--------------------|---------------------------|
