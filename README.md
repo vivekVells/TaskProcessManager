@@ -28,6 +28,15 @@
 | Cloud Deployment  - Scaling up & delivery of this web Application to everyone by using Cloud CSPs                                                  | Exploring Microservices architecture  for this application | Developer Portal Website to expose the application API to external developers |
 | Code Development Practice Related   - Hot Deploy concept in concept tryout   - Issues creation & assigning gently   automatically when buildfails  | Using Frontend Framework                                   | Implementing Adobe Analytics or such data analysis over application           |
 
+### Quick Links:
+|                                                                                          File (links)                                                                                          |                        Description                       |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------:|
+| [Work Log](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/files/What%20We%20did%20-%20Work%20Status%20Log.pdf)                                              | contains log about work done towards the project         |
+| [Meeting Log](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/files/Meeting%20Log.pdf)                                                                       | contails log about meeting sync up info                  |
+| [Design Document](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/files/Design%20Document.pdf)                                                               | document explaining the design approach for this project |
+| [Test Approach Docuemnt](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/files/Test%20Approach%20Document.pdf)                                               | document explaining the test approach for this project   |
+| [Task Process Monitor - Final Demo PPT](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/files/Task%20Process%20Monitor%20-%20Project%20-%20Final%20Demo.pdf) | Final Demo Presentation File                             |
+
 #### Note: Will be updating this read me document more about the instrutions to run this in your windows machine, few more demo info & few more info. Kindly refer Gifs, pdfs, & Screenshots mentioned below for now - Version 2.0.
 
 ### Demo - Version 2.0 Project Images
