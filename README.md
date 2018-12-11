@@ -27,7 +27,8 @@
 |----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------------------------|
 | Cloud Deployment  - Scaling up & delivery of this web Application to everyone by using Cloud CSPs                                                  | Exploring Microservices architecture  for this application | Developer Portal Website to expose the application API to external developers |
 | Code Development Practice Related   - Hot Deploy concept in concept tryout   - Issues creation & assigning gently   automatically when buildfails  | Using Frontend Framework                                   | Implementing Adobe Analytics or such data analysis over application           |
-
+- Modularize the database by using normalization & bridge pattern concepts
+- refactor the endpoint controllers location
 ### Quick Links:
 |                                                                                          File (links)                                                                                          |                        Description                       |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------:|
@@ -54,6 +55,16 @@ https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version
 ![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Process%20Monitor%20Home%20Page%20-%20Version%20%26%20Single%20CPU%20usage%20info.png)
 **Maven Build System - Build success**
 ![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/maven%20build%20output.PNG)
+**Swagger UI view**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Swagger-UI%20response%20-%20all%20endpoints%20-%20API%20Documentation.png)
+**API Docs endopint response**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/api-docs-response.PNG)
+**API endpoint - CPU Usage response**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/cpu%20info%20api%20response.PNG)
+**API endpoint - Versions response**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/api-ajax-versions-response.PNG)
+**ALL Endpoints Info**
+![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/api%20end%20points%20home%20page.PNG)
 **Semaphore CI - Project Build Status**
 - Tag on repo
 ![](https://github.com/vivekVells/TaskProcessManager/blob/master/demo-review/version2/Screenshots/Build%20passed%20snippet.PNG)
