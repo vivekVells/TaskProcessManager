@@ -2,8 +2,6 @@
 
 # Task Process Monitor / ProcessOnitor / ProcesSanager
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/3bb1fbdb-6c1a-4804-ad37-36a86bc09d46/2305464/badge.svg)](https://semaphoreci.com/kevshali/taskprocessmanager)
-
 ### Objective
 - To implement the classic task manager application.  It must contain the following components: metrics collection, database storage, and a user interface.
 
