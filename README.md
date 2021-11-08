@@ -7,6 +7,11 @@
 ### Objective
 - To implement the classic task manager application.  It must contain the following components: metrics collection, database storage, and a user interface.
 
+### Coursework Information
+- Coursework Capstone Project: MSCS 710L | Duration: Fall 2018 (Sep to Dec 2018)
+- Degree: Masters in Computer Science - Software Development | College: Marist College, NY
+- Professor: Anthony Giorgio
+
 ### Team Info & Roles Executed for this project
 |        Name        |                                   Roles                                  |         Shared Roles         |
 |:------------------:|:------------------------------------------------------------------------:|:----------------------------:|
@@ -16,6 +21,7 @@
 
 ### Tech Stack 
 - Java, Sigar API (to get system level info), Spring Boot, Spring, Spring MVC, Spring Rest Controller, Spring Data JPA, Hibernate, Spring Scheduler, H2 - Database, Junit, HTML, CSS, JavaScript, jQuery, Bootstrap, Github, CI/CD pipeline - Semaphore, Docker, Maven, Swagger, Webjarjs, Log4j, Postman (API testing & actions)
+
 ### Project Highlights
 |              |                      |                                  |                    |                           |
 |--------------|----------------------|----------------------------------|--------------------|---------------------------|
