@@ -6,7 +6,7 @@
 - To implement the classic task manager application.  It must contain the following components: metrics collection, database storage, and a user interface.
 
 ### Coursework Information
-- Coursework Capstone Project: MSCS 710L | Duration: Fall 2018 (Sep to Dec 2018)
+- Capstone Project: MSCS 710L | Duration: Fall 2018 (Aug to Dec 2018)
 - Degree: Masters in Computer Science - Software Development | College: Marist College, NY
 - Professor: Anthony Giorgio
 
